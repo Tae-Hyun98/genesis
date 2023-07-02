@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 li {
@@ -9,6 +10,10 @@ li {
 
 a {
   text-decoration: none;
+}
+
+img {
+  display: block;
 }
 
 .container {
@@ -20,25 +25,34 @@ a {
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
+  padding: 0 120px;
 
   .logo_box {
-    padding: 10px 50px;
-
-    img {
-      margin: 0 auto;
-    }
+    position: absolute;
+    margin-left: 30px;
   }
 
   .nav_box {
+    width: 100%;
+
     ul {
       display: flex;
       justify-content: center;
 
       li {
-        color: #fff;
-        line-height: 70px;
+
+        a {
+          display: block;
+          color: #fff;
+          line-height: 60px;
+          padding: 10px 25px;
+          font-size: 20px;
+          text-align: center;
+        }
+
       }
     }
   }
@@ -55,26 +69,73 @@ main {
       top: 0;
       background: url(../images/genesis\ visual.jpg) no-repeat;
       background-size: cover;
-      background-position: center;
+      background-position: center center;
       width: 100%;
-      height: 100vh;
+      height: calc(100vh - 80px);
       z-index: -1;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+        background-image: linear-gradient(to left, transparent, #111);
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 20%;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, transparent, #111);
+      }
     }
 
     .text_box {
       position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       color: #fff;
-      padding: 100px 300px;
 
-      h1 {
-        font-size: 2rem;
+      .text_inner {
+        padding: 80px 300px 0 300px;
+        display: flex;
+        flex-direction: column;
+
+        p {
+          font-weight: 500;
+          line-height: 1.2;
+
+          &.sub {
+            font-size: 2rem;
+            margin-bottom: 10px;
+          }
+
+          &.tit {
+            width: 890px;
+            font-size: 4rem;
+            letter-spacing: -5px;
+            margin-bottom: 10px;
+          }
+
+          &.sub_1 {
+            font-size: 20px;
+          }
+        }
       }
 
-      p.tit {
-        font-size: 5rem;
-      }
 
-      p {}
+
+
     }
   }
 }
