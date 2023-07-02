@@ -98,20 +98,43 @@ main .visual .text_box .text_inner {
   display: flex;
   flex-direction: column;
 }
-main .visual .text_box .text_inner p {
+main .visual .text_box .text_inner .text_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+main .visual .text_box .text_inner .text_top p {
   font-weight: 500;
   line-height: 1.2;
 }
-main .visual .text_box .text_inner p.sub {
+main .visual .text_box .text_inner .text_top p.sub {
   font-size: 2rem;
   margin-bottom: 10px;
 }
-main .visual .text_box .text_inner p.tit {
+main .visual .text_box .text_inner .text_top p.tit {
   width: 890px;
   font-size: 4rem;
   letter-spacing: -5px;
   margin-bottom: 10px;
 }
-main .visual .text_box .text_inner p.sub_1 {
+main .visual .text_box .text_inner .text_top p.sub_1 {
   font-size: 20px;
+}
+main .visual .arrow_bottom {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: 0;
+}
+main .visual .arrow_bottom::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
