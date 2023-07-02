@@ -2,3 +2,64 @@
   margin: 0;
   padding: 0;
 }
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 100px;
+}
+
+#wrap {
+  background-color: #111;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+.header .logo_box {
+  padding: 10px 50px;
+}
+.header .logo_box img {
+  margin: 0 auto;
+}
+.header .nav_box ul {
+  display: flex;
+  justify-content: center;
+}
+.header .nav_box ul li {
+  color: #fff;
+  line-height: 70px;
+}
+
+main .visual {
+  position: relative;
+}
+main .visual .visual_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../images/genesis\ visual.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+main .visual .text_box {
+  position: absolute;
+  color: #fff;
+  padding: 100px 300px;
+}
+main .visual .text_box h1 {
+  font-size: 2rem;
+}
+main .visual .text_box p.tit {
+  font-size: 5rem;
+}/*# sourceMappingURL=main.css.map */
