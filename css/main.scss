@@ -16,10 +16,6 @@ img {
   display: block;
 }
 
-.container {
-  padding: 0 100px;
-}
-
 #wrap {
   background-color: #111;
 }
@@ -30,27 +26,57 @@ img {
   align-items: center;
   padding: 0 120px;
 
-  .logo_box {
-    position: absolute;
-    margin-left: 30px;
-  }
-
   .nav_box {
     width: 100%;
 
     ul {
       display: flex;
-      justify-content: center;
+      justify-content: end;
 
       li {
+        &:hover {
+
+          a::before,
+          a::after {
+            width: 40%;
+          }
+        }
 
         a {
+          position: relative;
           display: block;
           color: #fff;
           line-height: 60px;
           padding: 10px 25px;
           font-size: 20px;
           text-align: center;
+          letter-spacing: 5px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 49%;
+            bottom: 20px;
+            display: block;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            transition: all 0.3s;
+
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            right: 50%;
+            bottom: 20px;
+            display: block;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            transition: all 0.3s;
+
+          }
         }
 
       }
@@ -58,6 +84,7 @@ img {
   }
 
 }
+
 
 main {
   .visual {
@@ -72,7 +99,7 @@ main {
       background-size: cover;
       background-position: center center;
       width: 100%;
-      height: calc(100vh - 80px);
+      height: calc(100vh - 100px);
       animation: bg_ani 1s linear;
 
       @keyframes bg_ani {
@@ -93,7 +120,6 @@ main {
         top: 0;
         width: 50%;
         height: 100%;
-        z-index: -1;
         background-image: linear-gradient(to left, transparent, #111);
       }
 
@@ -105,7 +131,6 @@ main {
         bottom: 0;
         width: 100%;
         height: 20%;
-        z-index: -1;
         background-image: linear-gradient(to bottom, transparent, #111);
       }
     }
@@ -129,7 +154,7 @@ main {
 
           p {
             font-weight: 500;
-            line-height: 1.2;
+            line-height: 1.1;
 
             &.sub {
               font-size: 2rem;
@@ -139,8 +164,8 @@ main {
             &.tit {
               width: 890px;
               font-size: 4rem;
-              letter-spacing: -5px;
-              margin-bottom: 10px;
+              letter-spacing: -3px;
+              margin-bottom: 15px;
             }
 
             &.sub_1 {
@@ -149,18 +174,18 @@ main {
           }
         }
 
-
       }
 
     }
 
     .arrow_bottom {
       position: absolute;
-      bottom: 50px;
+      bottom: 60px;
       left: 50%;
       width: 20px;
       height: 20px;
       font-size: 0;
+      z-index: 1;
 
       &::before {
         content: '';
@@ -188,43 +213,202 @@ main {
         }
       }
     }
+
+  }
+
+
+  .different {
+    padding: 10px 0 30px 0;
+
+    p {
+      text-align: center;
+      color: #ccc;
+      letter-spacing: -1px;
+    }
+  }
+
+  .design_section {
+    position: relative;
+    margin: 50px 0;
+
+    .design_bg {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .design_text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-top: 60px;
+      padding-left: 100px;
+      color: #fff;
+
+      h2 {
+        font-size: 6rem;
+        padding-bottom: 50px;
+      }
+
+      .design_desc {
+        width: 520px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 65px;
+          background-color: #fff;
+        }
+
+        p {
+          padding-left: 20px;
+        }
+      }
+    }
+
+    .design_img {
+      position: absolute;
+      width: 30%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      img {
+        width: 100%;
+      }
+    }
+
+  }
+
+
+
+  .color_section {
+    padding-bottom: 50px;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: -25px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .genesis_color {
+      position: relative;
+      width: 100%;
+
+      .swiper-wrapper {
+
+        li {
+          opacity: 0;
+          transition: all 1.5s;
+
+          &.swiper-slide-active {
+            opacity: 1;
+
+            .color_box {
+              img {
+                opacity: 1;
+                animation: active_ani 0.6s linear;
+              }
+            }
+
+            @keyframes active_ani {
+              50% {
+                transform: translateX(-4%);
+              }
+            }
+          }
+
+          .color_box {
+            img {
+              opacity: 0;
+              margin: 0 auto;
+
+            }
+          }
+        }
+      }
+
+      .swiper-pagination {
+        .swiper-pagination-bullet {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          margin-right: 15px;
+          opacity: 0.5;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &.swiper-pagination-bullet-active {
+            border: 3px solid #ccc;
+            opacity: 1;
+          }
+
+          &:nth-child(1) {
+            background-color: #fff;
+          }
+
+          &:nth-child(2) {
+            background-color: #47464a;
+          }
+
+          &:nth-child(3) {
+            background-color: #000;
+          }
+
+          &:nth-child(4) {
+            background-color: blue;
+          }
+
+          &:nth-child(5) {
+            background-color: red;
+          }
+        }
+      }
+
+      .button {
+        position: absolute;
+        left: 13%;
+        top: 45%;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .swiper-button-next {
+        left: auto;
+        right: 13%;
+      }
+    }
   }
 
   .gallery {
     display: flex;
     width: 100%;
+    padding: 100px 0;
 
-    img {
-      width: 100%;
-      cursor: pointer;
-
-      &.hei {
-        height: 450px;
-      }
-    }
 
     .gallery_left,
     .gallery_center,
     .gallery_right {
-      padding-right: 8px;
-      width: 40%;
-
-      &:last-child {
-        padding-right: 0;
-      }
+      width: 34%;
 
       .img_box {
-        margin-bottom: 10px;
+        padding: 4px;
 
-        &:last-child {
-          margin-bottom: 0;
+        img {
+          width: 100%;
+          cursor: pointer;
+
+          &.hei {}
         }
       }
     }
 
-    .gallery_center {
-      width: 32%;
-    }
+    .gallery_center {}
 
   }
 }

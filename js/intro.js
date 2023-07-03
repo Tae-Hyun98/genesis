@@ -9,4 +9,4 @@ setInterval(() => {
   }
   count += 1;
   countBox.innerHTML = count + '%'
-}, 20)
+}, 10)
