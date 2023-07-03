@@ -198,16 +198,19 @@ main .design_section .design_bg img {
   width: 100%;
 }
 main .design_section .design_text {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 200px;
   left: 0;
-  padding-top: 60px;
-  padding-left: 100px;
+  padding-top: 100px;
+  padding-left: 200px;
   color: #fff;
 }
 main .design_section .design_text h2 {
   font-size: 6rem;
   padding-bottom: 50px;
+  letter-spacing: 2px;
 }
 main .design_section .design_text .design_desc {
   width: 520px;
@@ -224,12 +227,19 @@ main .design_section .design_text .design_desc p {
 }
 main .design_section .design_img {
   position: absolute;
-  width: 30%;
-  height: 100%;
   top: 0;
-  right: 0;
+  left: 0;
 }
 main .design_section .design_img img {
+  width: 30%;
+}
+main .design_section .design_img1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 33%;
+}
+main .design_section .design_img1 img {
   width: 100%;
 }
 main .color_section {
@@ -259,6 +269,9 @@ main .color_section .genesis_color .swiper-wrapper li.swiper-slide-active .color
 @keyframes active_ani {
   50% {
     transform: translateX(-4%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 main .color_section .genesis_color .swiper-wrapper li .color_box img {

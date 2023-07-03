@@ -240,16 +240,19 @@ main {
     }
 
     .design_text {
+      display: flex;
+      flex-direction: column;
       position: absolute;
-      top: 0;
+      top: 200px;
       left: 0;
-      padding-top: 60px;
-      padding-left: 100px;
+      padding-top: 100px;
+      padding-left: 200px;
       color: #fff;
 
       h2 {
         font-size: 6rem;
         padding-bottom: 50px;
+        letter-spacing: 2px;
       }
 
       .design_desc {
@@ -271,14 +274,26 @@ main {
 
     .design_img {
       position: absolute;
-      width: 30%;
-      height: 100%;
       top: 0;
-      right: 0;
+      left: 0;
+
       img {
+        width: 30%;
+
+      }
+    }
+
+    .design_img1 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 33%;
+
+      img{
         width: 100%;
       }
     }
+
 
   }
 
@@ -317,6 +332,10 @@ main {
             @keyframes active_ani {
               50% {
                 transform: translateX(-4%);
+              }
+
+              100% {
+                transform: translateX(0);
               }
             }
           }
