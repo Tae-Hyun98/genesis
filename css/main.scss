@@ -62,6 +62,7 @@ img {
 main {
   .visual {
     position: relative;
+    height: calc(100vh - 80px);
 
     .visual_bg {
       position: absolute;
@@ -72,7 +73,6 @@ main {
       background-position: center center;
       width: 100%;
       height: calc(100vh - 80px);
-      z-index: -1;
       animation: bg_ani 1s linear;
 
       @keyframes bg_ani {
@@ -188,5 +188,43 @@ main {
         }
       }
     }
+  }
+
+  .gallery {
+    display: flex;
+    width: 100%;
+
+    img {
+      width: 100%;
+      cursor: pointer;
+
+      &.hei {
+        height: 450px;
+      }
+    }
+
+    .gallery_left,
+    .gallery_center,
+    .gallery_right {
+      padding-right: 8px;
+      width: 40%;
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      .img_box {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .gallery_center {
+      width: 32%;
+    }
+
   }
 }

@@ -52,6 +52,7 @@ img {
 
 main .visual {
   position: relative;
+  height: calc(100vh - 80px);
 }
 main .visual .visual_bg {
   position: absolute;
@@ -62,7 +63,6 @@ main .visual .visual_bg {
   background-position: center center;
   width: 100%;
   height: calc(100vh - 80px);
-  z-index: -1;
   animation: bg_ani 1s linear;
 }
 @keyframes bg_ani {
@@ -159,4 +159,39 @@ main .visual .arrow_bottom::before {
     bottom: -20px;
     opacity: 0;
   }
+}
+main .gallery {
+  display: flex;
+  width: 100%;
+}
+main .gallery img {
+  width: 100%;
+  cursor: pointer;
+}
+main .gallery img.hei {
+  height: 450px;
+}
+main .gallery .gallery_left,
+main .gallery .gallery_center,
+main .gallery .gallery_right {
+  padding-right: 8px;
+  width: 40%;
+}
+main .gallery .gallery_left:last-child,
+main .gallery .gallery_center:last-child,
+main .gallery .gallery_right:last-child {
+  padding-right: 0;
+}
+main .gallery .gallery_left .img_box,
+main .gallery .gallery_center .img_box,
+main .gallery .gallery_right .img_box {
+  margin-bottom: 10px;
+}
+main .gallery .gallery_left .img_box:last-child,
+main .gallery .gallery_center .img_box:last-child,
+main .gallery .gallery_right .img_box:last-child {
+  margin-bottom: 0;
+}
+main .gallery .gallery_center {
+  width: 32%;
 }/*# sourceMappingURL=main.css.map */
