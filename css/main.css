@@ -274,22 +274,51 @@ main .design_section .design_img1 img {
   width: 100%;
 }
 main .design_section .exterior_pop {
+  display: none;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  filter: blur(5px);
-  z-index: 0;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
-main .design_section .exterior_pop .blur {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 9999;
+main .design_section .exterior_pop .pop_top,
+main .design_section .exterior_pop .pop_bottom {
+  display: flex;
+}
+main .design_section .exterior_pop .pop_top .exter_img,
+main .design_section .exterior_pop .pop_bottom .exter_img {
+  width: 60%;
+  transform: translateY(-5%);
+}
+main .design_section .exterior_pop .pop_top .exter_img img,
+main .design_section .exterior_pop .pop_bottom .exter_img img {
   width: 100%;
-  padding: 100px;
-  height: 100%;
+}
+main .design_section .exterior_pop .pop_top .exter_desc,
+main .design_section .exterior_pop .pop_bottom .exter_desc {
+  width: 40%;
+  color: #fff;
+  padding: 60px;
+}
+main .design_section .exterior_pop .pop_top .exter_desc h2,
+main .design_section .exterior_pop .pop_bottom .exter_desc h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+main .design_section .exterior_pop .pop_top .exter_desc p,
+main .design_section .exterior_pop .pop_bottom .exter_desc p {
+  font-size: 24px;
+}
+main .design_section .exterior_pop .pop_bottom .exter_img {
+  width: 50%;
+  transform: translateY(-16%);
+}
+main .design_section .exterior_pop .pop_bottom .exter_desc {
+  width: 50%;
+  color: #fff;
 }
 main .color_section {
   padding-bottom: 50px;
@@ -314,15 +343,6 @@ main .color_section .genesis_color .swiper-wrapper li.swiper-slide-active {
 main .color_section .genesis_color .swiper-wrapper li.swiper-slide-active .color_box img {
   opacity: 1;
   transform: translateX(0);
-  animation: active_ani 0.6s linear;
-}
-@keyframes active_ani {
-  50% {
-    transform: translateX(-4%);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 main .color_section .genesis_color .swiper-wrapper li .color_box img {
   opacity: 0;
