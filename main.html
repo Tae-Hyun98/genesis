@@ -11,6 +11,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="./js/main.js" defer></script>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -50,7 +54,7 @@
     <main>
       <section class="visual">
         <div class="visual_bg">
-          <video autoplay muted loop src="./images/fsdafsda.mp4"></video>
+          <video autoplay muted loop src="./images/visual_video.mp4"></video>
           <div class="arrow_bottom">arrow</div>
         </div>
         <div class="text_box">
@@ -83,18 +87,18 @@
               </p>
 
               <div class="design_btn">
-                <button><span>Exterior</span></button>
-                <button><span>Interior</span></button>
+                <button type="button" class="exterior"><span>Exterior</span></button>
+                <button type="button" class="interior"><span>Interior</span></button>
               </div>
             </div>
           </div>
 
         </div>
 
-        <div class="exterior_pop">
+        <div class="exterior_pop popup">
           <div class="pop_top">
             <div class="exter_img">
-              <img src="./images/design_exterior1.jpg" alt="">
+              <img src="./images/design_exterior1.jpg" alt="exterior">
             </div>
             <div class="exter_desc">
               <h2>프론트 디자인</h2>
@@ -110,11 +114,41 @@
             </div>
 
             <div class="exter_img">
-              <img src="./images/design_exterior2.jpg" alt="">
+              <img src="./images/design_exterior2.jpg" alt="exterior">
             </div>
           </div>
 
+          <div class="popup_close"></div>
+
         </div>
+
+        <div class="interior_pop popup">
+          <div class="pop_top">
+            <div class="inter_img">
+              <img src="./images/interior_img1.jpg" alt="interior">
+            </div>
+            <div class="inter_desc">
+              <h2>투톤 가죽 스티어링 휠</h2>
+              <p>촉감이 뛰어난 가죽 스티어링 휠에 투톤 컬러 디자인으로 실내의 고급감을 초월한 제네시스만의 독창적인 경험을 완성합니다.</p>
+            </div>
+          </div>
+
+          <div class="pop_bottom">
+            <div class="inter_desc">
+              <h2>오픈포어 리얼우드 가니쉬</h2>
+              <p>까다롭게 엄선된 오픈포어 리얼우드를 적용하여 부드러우면서도 실제 천연 원목의 질감을 살려 프리미엄함을 연출합니다.
+              </p>
+            </div>
+
+            <div class="inter_img">
+              <img src="./images/interior_img2.jpg" alt="interior">
+            </div>
+          </div>
+
+          <div class="popup_close"></div>
+
+        </div>
+
       </section>
 
 
