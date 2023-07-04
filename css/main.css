@@ -179,6 +179,7 @@ main .visual .arrow_bottom::before {
 main .design_section {
   position: relative;
   margin: 50px 0;
+  overflow: hidden;
 }
 main .design_section .design_bg {
   position: relative;
@@ -271,6 +272,24 @@ main .design_section .design_img1 {
 }
 main .design_section .design_img1 img {
   width: 100%;
+}
+main .design_section .exterior_pop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(5px);
+  z-index: 0;
+}
+main .design_section .exterior_pop .blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  padding: 100px;
+  height: 100%;
 }
 main .color_section {
   padding-bottom: 50px;
