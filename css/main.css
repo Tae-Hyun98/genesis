@@ -24,7 +24,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 120px;
+  padding: 0 60px;
 }
 .header .nav_box {
   width: 100%;
@@ -42,7 +42,7 @@ img {
   display: block;
   color: #fff;
   line-height: 60px;
-  padding: 10px 25px;
+  padding: 5px 25px;
   font-size: 20px;
   text-align: center;
   letter-spacing: 5px;
@@ -74,11 +74,10 @@ main .visual {
   position: relative;
 }
 main .visual .visual_bg {
-  /*  background: url(../images/genesis\ visual.jpg) no-repeat;
-  background-size: cover;
-  background-position: center center; */
   width: 100%;
   animation: bg_ani 1s linear;
+  height: calc(100vh - 70px);
+  overflow: hidden;
   /* &::before {
     content: '';
     display: block;
@@ -102,7 +101,6 @@ main .visual .visual_bg {
 }
 main .visual .visual_bg video {
   width: 100%;
-  height: 100%;
 }
 @keyframes bg_ani {
   0% {
@@ -120,7 +118,7 @@ main .visual .text_box {
   color: #fff;
 }
 main .visual .text_box .text_inner {
-  padding: 80px 300px 0 300px;
+  padding: 80px 200px 0 200px;
   display: flex;
   flex-direction: column;
 }
@@ -178,14 +176,6 @@ main .visual .arrow_bottom::before {
     opacity: 0;
   }
 }
-main .different {
-  padding: 10px 0 30px 0;
-}
-main .different p {
-  text-align: center;
-  color: #ccc;
-  letter-spacing: -1px;
-}
 main .design_section {
   position: relative;
   margin: 50px 0;
@@ -212,6 +202,7 @@ main .design_section .design_text h2 {
   letter-spacing: 2px;
 }
 main .design_section .design_text .design_desc {
+  position: relative;
   width: 520px;
 }
 main .design_section .design_text .design_desc::before {
@@ -220,9 +211,49 @@ main .design_section .design_text .design_desc::before {
   width: 1px;
   height: 65px;
   background-color: #fff;
+  margin-right: 20px;
 }
 main .design_section .design_text .design_desc p {
-  padding-left: 20px;
+  width: 100%;
+  margin-left: 10px;
+}
+main .design_section .design_text .design_btn {
+  text-align: center;
+  padding-top: 20px;
+}
+main .design_section .design_text .design_btn button {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  background: none;
+  color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+main .design_section .design_text .design_btn button span {
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+main .design_section .design_text .design_btn button:hover span {
+  color: #000;
+}
+main .design_section .design_text .design_btn button:hover::before {
+  width: 100%;
+  opacity: 1;
+  background-color: white;
+}
+main .design_section .design_text .design_btn button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 50px;
+  transition: all 0.3s;
+  opacity: 0;
 }
 main .design_section .design_img {
   position: absolute;
