@@ -47,6 +47,7 @@ pic.forEach((item, idx) => {
 });
 
 
+//performance 탭메뉴
 const tabOn = document.querySelectorAll('.performance .tab p');
 const tabDesc = document.querySelectorAll('.performance .tab_desc>div');
 
