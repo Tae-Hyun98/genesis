@@ -26,6 +26,7 @@ interior.addEventListener('click', () => {
 
 })
 
+//color섹션에서 이미지클릭시 scale커지는거
 const pic = document.querySelectorAll('.genesis_color li');
 const swiimg = document.querySelectorAll('.genesis_color li img');
 let state = 0;
@@ -42,8 +43,13 @@ pic.forEach((item, idx) => {
       swiimg[idx].classList.remove('scale');
       state = 0;
     }
-  })
-})
+  });
+});
+
+
+const 
+
+
 
 
 const swiper = new Swiper('.genesis_color', {
