@@ -220,9 +220,10 @@ main {
       color: #fff;
 
       h2 {
-        font-size: 6rem;
+        font-size: 5rem;
         padding-bottom: 50px;
         letter-spacing: 2px;
+        font-weight: 500;
       }
 
       .design_desc {
@@ -421,9 +422,9 @@ main {
     border-bottom: 1px solid #1e1e1e;
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
+      font-weight: normal;
       margin-top: 80px;
-      margin-bottom: -25px;
       text-align: center;
       color: #fff;
     }
@@ -447,16 +448,21 @@ main {
           }
 
           &.swiper-slide-prev {
-            scale: 0.7;
+            scale: 0.8;
           }
 
           &.swiper-slide-next {
-            scale: 0.7;
+            scale: 0.8;
           }
 
           .color_box {
             img {
               margin: 0 auto;
+              transition: .3s;
+
+              &.scale {
+                transform: scale(1.4);
+              }
             }
           }
 
@@ -464,20 +470,29 @@ main {
       }
 
       .swiper-pagination {
+        width: 300px;
+        bottom: auto;
+        left: auto;
+        top: 50px;
+        right: 310px;
+
         .swiper-pagination-bullet {
           position: relative;
-          width: 50px;
-          height: 50px;
+          width: 25px;
+          height: 25px;
           margin-right: 15px;
           opacity: 0.6;
+          transition: .3s;
 
           &:last-child {
             margin-right: 0;
           }
 
           &.swiper-pagination-bullet-active {
-            border: 4px solid #ccc;
             opacity: 1;
+            width: 50px;
+            border-radius: 50px;
+            box-shadow: 0px 0px 5px rgba($color: #fff, $alpha: 0.8);
           }
 
           &:nth-child(1) {
@@ -493,7 +508,7 @@ main {
           }
 
           &:nth-child(4) {
-            background-color: blue;
+            background-color: #0000ff;
           }
 
           &:nth-child(5) {
@@ -521,8 +536,9 @@ main {
   .gallery_section {
     height: calc(100vh - 70px);
     overflow: hidden;
+
     .tit {
-      // padding: 50px 0 25px 0;
+      padding: 50px 0 25px 0;
 
       h1 {
         font-size: 3rem;
@@ -531,7 +547,30 @@ main {
       }
     }
 
-    .gallery {
+    .gallery_swiper {
+      width: 100%;
+      height: 500px;
+      .swiper-wrapper {
+        transition-timing-function: linear;
+
+        .swiper-slide {
+          margin-right: 40px;
+          .gallery_img {
+            width: 100%;
+            // height: calc(50vh - 104px);
+            height: 100%;
+            // padding: 0 100px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+
+    /* .gallery {
       display: flex;
       width: 100%;
 
@@ -659,9 +698,7 @@ main {
 
         .img_box {
           &:nth-child(1) {
-            .gallery_img {
-              
-            }
+            .gallery_img {}
           }
 
 
@@ -692,5 +729,6 @@ main {
 
 
     }
+  } */
   }
 }

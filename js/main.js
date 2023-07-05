@@ -26,19 +26,36 @@ interior.addEventListener('click', () => {
 
 })
 
+const pic = document.querySelectorAll('.genesis_color li');
+const swiimg = document.querySelectorAll('.genesis_color li img');
+let state = 0;
+pic.forEach((item, idx) => {
+
+  item.addEventListener('click', () => {
+    for (let el of swiimg) {
+      el.classList.remove('scale');
+    }
+    if (state === 0) {
+      swiimg[idx].classList.add('scale');
+      state = 1;
+    } else {
+      swiimg[idx].classList.remove('scale');
+      state = 0;
+    }
+  })
+})
 
 
 const swiper = new Swiper('.genesis_color', {
-  // effect: "fade",
   speed: 1000,
   slidesPerView: 'auto',
   centeredSlides: true,
-  // If we need pagination
+
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
   },
-  // Navigation arrows
+
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -46,3 +63,24 @@ const swiper = new Swiper('.genesis_color', {
 
 
 });
+
+/* const gallery = new Swiper('.gallery_swiper', {
+  speed: 2000,
+  loop: true,
+  slidesPerView: 3,
+  autoplay: {
+    delay: 0,
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+
+}); */

@@ -209,56 +209,112 @@
       <section class="gallery_section">
 
         <div class="tit">
+          <h1>GV80 GALLERY</h1>
         </div>
 
-        <div class="gallery">
-          <div class="gallery_left">
-            <div class="img_box">
-              <div class="gallery_img">
-                <img class="hei" src="./images/genesis_img1.jpg" alt="">
+        <div class="loop_infinite">
+          <div class="loop_container">
+
+            <div class="swiper gallery_swiper" dir="ltr">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img1.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img2.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img3.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img4.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img6.jpg" alt="">
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="img_box">
-              <div class="gallery_img">
-                <img src="./images/genesis_img2.jpg" alt="">
+            <div class="swiper gallery_swiper" dir="rtl">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/design_exterior1.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img2.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img3.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img4.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="gallery_img">
+                    <img src="./images/genesis_img6.jpg" alt="">
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="gallery_center">
-            <div class="img_box">
-              <div class="gallery_img">
-                <img src="./images/genesis_img3.jpg" alt="">
-              </div>
-            </div>
-
-            <div class="img_box">
-              <div class="gallery_img">
-                <img class="hei" src="./images/genesis_img4.jpg" alt="">
-              </div>
-            </div>
-
-          </div>
-
-          <div class="gallery_right">
-            <div class="img_box">
-              <div class="gallery_img">
-                <img class="hei" src="./images/genesis-kr-gallery-gv80-interior-22-popup-1920x960-ko.jpg" alt="">
-              </div>
-            </div>
-
-            <div class="img_box">
-              <div class="gallery_img">
-                <img src="./images/genesis_img6.jpg" alt="">
-              </div>
-            </div>
           </div>
         </div>
 
       </section>
     </main>
   </div>
+
+  <script>
+    const gallery = new Swiper('.gallery_swiper', {
+      loop: true,
+      speed: 3000,
+      slidesPerView: '3',
+      autoplay: {
+        delay: 0,
+      },
+      // loopSlides:'1',
+
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+
+
+    });
+  </script>
 </body>
+
+
 
 </html>
