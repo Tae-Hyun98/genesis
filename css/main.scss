@@ -21,10 +21,13 @@ img {
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 0 60px;
+  background-color: #111;
+  z-index: 9999;
 
   .nav_box {
     width: 100%;
@@ -67,6 +70,7 @@ img {
           }
 
           &::after {
+            left: auto;
             right: 50%;
 
           }
@@ -81,13 +85,14 @@ img {
 
 main {
   .visual {
-    position: relative;
+    padding-top: 70px;
+    overflow: hidden;
 
     .visual_bg {
+      position: relative;
       width: 100%;
       animation: bg_ani 1s linear;
       height: calc(100vh - 70px);
-      overflow: hidden;
 
       video {
         width: 100%;
@@ -96,10 +101,12 @@ main {
       @keyframes bg_ani {
         0% {
           opacity: 0;
+          scale: 1.5;
         }
 
         100% {
           opacity: 1;
+          scale: 1;
         }
       }
 
@@ -189,7 +196,7 @@ main {
 
   .design_section {
     position: relative;
-    margin: 150px 0;
+    overflow: hidden;
 
     .design_bg {
       position: relative;
@@ -218,19 +225,20 @@ main {
 
       .design_desc {
         position: relative;
-        width: 520px;
+        width: 550px;
 
         &::before {
           content: '';
           position: absolute;
           width: 1px;
-          height: 65px;
+          height: 74px;
           background-color: #fff;
           margin-right: 20px;
         }
 
         p {
           width: 100%;
+          font-size: 18px;
           margin-left: 10px;
         }
       }
@@ -293,6 +301,7 @@ main {
       height: 100%;
       top: 0;
       left: 0;
+      padding: 20px 50px;
       backdrop-filter: blur(5px);
       transition: all 0.3s;
 
@@ -303,27 +312,30 @@ main {
         .exter_img,
         .inter_img {
           width: 60%;
-          // transform: translateY(-5%);
 
           img {
             width: 100%;
           }
         }
 
+        .inter_img {
+          width: 55%;
+        }
+
         .exter_desc,
         .inter_desc {
           width: 40%;
           color: #fff;
-          padding: 60px;
+          padding: 20px 50px;
 
           h2 {
-            font-size: 40px;
+            font-size: 38px;
             text-align: center;
             margin-bottom: 20px;
           }
 
           p {
-            font-size: 24px;
+            font-size: 22px;
           }
         }
       }
@@ -332,7 +344,7 @@ main {
 
         .exter_img {
           width: 55%;
-          transform: translateY(-13%);
+          transform: translateY(-20%);
 
           img {
             width: 100%;
@@ -340,12 +352,17 @@ main {
         }
 
         .inter_img {
-          width: 38%;
-          transform: translate(-2%, -35.5%);
+          width: 40%;
+          transform: translate(-2%, -32%);
+
+          img {
+            width: 80%;
+            margin: 0 auto;
+          }
         }
 
         .inter_desc {
-          width: 62%;
+          width: 60%;
           color: #fff;
         }
 
@@ -357,7 +374,7 @@ main {
 
       .popup_close {
         position: absolute;
-        top: 10px;
+        top: 20px;
         right: 20px;
         border: 2px solid #fff;
         width: 50px;
@@ -398,10 +415,11 @@ main {
 
 
   .color_section {
-    padding-bottom: 50px;
+    height: calc(100vh - 70px);
 
     h1 {
       font-size: 3rem;
+      margin-top: 80px;
       margin-bottom: -25px;
       text-align: center;
       color: #fff;
@@ -411,32 +429,33 @@ main {
       position: relative;
       width: 100%;
 
+
       .swiper-wrapper {
 
         li {
+          height: 700px;
           opacity: 0;
-          transition: all 1.5s;
+          transition: all 0.3s;
 
           &.swiper-slide-active {
             opacity: 1;
+            scale: 1;
+          }
 
-            .color_box {
-              img {
-                opacity: 1;
-                transform: translateX(0);
+          &.swiper-slide-prev {
+            scale: 0.7;
+          }
 
-              }
-
-            }
+          &.swiper-slide-next {
+            scale: 0.7;
           }
 
           .color_box {
             img {
-              opacity: 0;
               margin: 0 auto;
-
             }
           }
+
         }
       }
 
@@ -446,14 +465,14 @@ main {
           width: 50px;
           height: 50px;
           margin-right: 15px;
-          opacity: 0.5;
+          opacity: 0.6;
 
           &:last-child {
             margin-right: 0;
           }
 
           &.swiper-pagination-bullet-active {
-            border: 3px solid #ccc;
+            border: 4px solid #ccc;
             opacity: 1;
           }
 

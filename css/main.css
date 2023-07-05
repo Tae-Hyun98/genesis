@@ -21,10 +21,13 @@ img {
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 0 60px;
+  background-color: #111;
+  z-index: 9999;
 }
 .header .nav_box {
   width: 100%;
@@ -59,17 +62,19 @@ img {
   transition: all 0.3s;
 }
 .header .nav_box ul li a::after {
+  left: auto;
   right: 50%;
 }
 
 main .visual {
-  position: relative;
+  padding-top: 70px;
+  overflow: hidden;
 }
 main .visual .visual_bg {
+  position: relative;
   width: 100%;
   animation: bg_ani 1s linear;
   height: calc(100vh - 70px);
-  overflow: hidden;
 }
 main .visual .visual_bg video {
   width: 100%;
@@ -77,9 +82,11 @@ main .visual .visual_bg video {
 @keyframes bg_ani {
   0% {
     opacity: 0;
+    scale: 1.5;
   }
   100% {
     opacity: 1;
+    scale: 1;
   }
 }
 main .visual .text_box {
@@ -150,7 +157,7 @@ main .visual .arrow_bottom::before {
 }
 main .design_section {
   position: relative;
-  margin: 150px 0;
+  overflow: hidden;
 }
 main .design_section .design_bg {
   position: relative;
@@ -176,18 +183,19 @@ main .design_section .design_text h2 {
 }
 main .design_section .design_text .design_desc {
   position: relative;
-  width: 520px;
+  width: 550px;
 }
 main .design_section .design_text .design_desc::before {
   content: "";
   position: absolute;
   width: 1px;
-  height: 65px;
+  height: 74px;
   background-color: #fff;
   margin-right: 20px;
 }
 main .design_section .design_text .design_desc p {
   width: 100%;
+  font-size: 18px;
   margin-left: 10px;
 }
 main .design_section .design_text .design_btn {
@@ -236,6 +244,7 @@ main .design_section .popup {
   height: 100%;
   top: 0;
   left: 0;
+  padding: 20px 50px;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   transition: all 0.3s;
@@ -256,19 +265,23 @@ main .design_section .popup .pop_bottom .exter_img img,
 main .design_section .popup .pop_bottom .inter_img img {
   width: 100%;
 }
+main .design_section .popup .pop_top .inter_img,
+main .design_section .popup .pop_bottom .inter_img {
+  width: 55%;
+}
 main .design_section .popup .pop_top .exter_desc,
 main .design_section .popup .pop_top .inter_desc,
 main .design_section .popup .pop_bottom .exter_desc,
 main .design_section .popup .pop_bottom .inter_desc {
   width: 40%;
   color: #fff;
-  padding: 60px;
+  padding: 20px 50px;
 }
 main .design_section .popup .pop_top .exter_desc h2,
 main .design_section .popup .pop_top .inter_desc h2,
 main .design_section .popup .pop_bottom .exter_desc h2,
 main .design_section .popup .pop_bottom .inter_desc h2 {
-  font-size: 40px;
+  font-size: 38px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -276,21 +289,25 @@ main .design_section .popup .pop_top .exter_desc p,
 main .design_section .popup .pop_top .inter_desc p,
 main .design_section .popup .pop_bottom .exter_desc p,
 main .design_section .popup .pop_bottom .inter_desc p {
-  font-size: 24px;
+  font-size: 22px;
 }
 main .design_section .popup .pop_bottom .exter_img {
   width: 55%;
-  transform: translateY(-13%);
+  transform: translateY(-20%);
 }
 main .design_section .popup .pop_bottom .exter_img img {
   width: 100%;
 }
 main .design_section .popup .pop_bottom .inter_img {
-  width: 38%;
-  transform: translate(-2%, -35.5%);
+  width: 40%;
+  transform: translate(-2%, -32%);
+}
+main .design_section .popup .pop_bottom .inter_img img {
+  width: 80%;
+  margin: 0 auto;
 }
 main .design_section .popup .pop_bottom .inter_desc {
-  width: 62%;
+  width: 60%;
   color: #fff;
 }
 main .design_section .popup .pop_bottom .exter_desc {
@@ -299,7 +316,7 @@ main .design_section .popup .pop_bottom .exter_desc {
 }
 main .design_section .popup .popup_close {
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 20px;
   border: 2px solid #fff;
   width: 50px;
@@ -327,10 +344,11 @@ main .design_section .popup .popup_close:hover::before, main .design_section .po
   background-color: #000;
 }
 main .color_section {
-  padding-bottom: 50px;
+  height: calc(100vh - 70px);
 }
 main .color_section h1 {
   font-size: 3rem;
+  margin-top: 80px;
   margin-bottom: -25px;
   text-align: center;
   color: #fff;
@@ -340,18 +358,21 @@ main .color_section .genesis_color {
   width: 100%;
 }
 main .color_section .genesis_color .swiper-wrapper li {
+  height: 700px;
   opacity: 0;
-  transition: all 1.5s;
+  transition: all 0.3s;
 }
 main .color_section .genesis_color .swiper-wrapper li.swiper-slide-active {
   opacity: 1;
+  scale: 1;
 }
-main .color_section .genesis_color .swiper-wrapper li.swiper-slide-active .color_box img {
-  opacity: 1;
-  transform: translateX(0);
+main .color_section .genesis_color .swiper-wrapper li.swiper-slide-prev {
+  scale: 0.7;
+}
+main .color_section .genesis_color .swiper-wrapper li.swiper-slide-next {
+  scale: 0.7;
 }
 main .color_section .genesis_color .swiper-wrapper li .color_box img {
-  opacity: 0;
   margin: 0 auto;
 }
 main .color_section .genesis_color .swiper-pagination .swiper-pagination-bullet {
@@ -359,13 +380,13 @@ main .color_section .genesis_color .swiper-pagination .swiper-pagination-bullet 
   width: 50px;
   height: 50px;
   margin-right: 15px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 main .color_section .genesis_color .swiper-pagination .swiper-pagination-bullet:last-child {
   margin-right: 0;
 }
 main .color_section .genesis_color .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  border: 3px solid #ccc;
+  border: 4px solid #ccc;
   opacity: 1;
 }
 main .color_section .genesis_color .swiper-pagination .swiper-pagination-bullet:nth-child(1) {

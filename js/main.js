@@ -23,14 +23,16 @@ interior.addEventListener('click', () => {
     interiorPopup.style.opacity = '0';
     interiorPopup.style.scale = '0';
   });
-  
+
 })
 
 
 
 const swiper = new Swiper('.genesis_color', {
-  // Optional parameters
-  effect: "fade",
+  // effect: "fade",
+  speed: 1000,
+  slidesPerView: 'auto',
+  centeredSlides: true,
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
