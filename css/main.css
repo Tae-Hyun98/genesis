@@ -597,7 +597,9 @@ main .color_section .genesis_color .swiper-button-next {
   right: 13%;
 }
 main .performance_section {
+  background: url(../images/performance_bg.jpg) no-repeat;
   height: calc(100vh - 70px);
+  overflow: hidden;
 }
 main .performance_section .performance {
   width: 1340px;
@@ -631,7 +633,11 @@ main .performance_section .performance .tab p:last-child {
   border-right: none;
 }
 main .performance_section .performance .tab_desc {
+  width: 100%;
   overflow: hidden;
+}
+main .performance_section .performance .tab_desc .suspension {
+  display: none;
 }
 main .performance_section .performance .tab_desc .suspension .sus {
   position: relative;
@@ -651,18 +657,45 @@ main .performance_section .performance .tab_desc .suspension .sus .sus_bg {
   width: 100%;
   height: 100%;
 }
-main .performance_section .performance .tab_desc .suspension .sus_desc {
+main .performance_section .performance .tab_desc .suspension .sus .sus_desc {
   position: absolute;
   top: 70px;
   left: 50px;
   z-index: 2;
   width: 40%;
 }
-main .performance_section .performance .tab_desc .suspension .sus_desc p {
+main .performance_section .performance .tab_desc .suspension .sus .sus_desc p {
   color: #fff;
   font-size: 18px;
 }
-main .performance_section .performance .tab_desc .suspension .sus_desc p.tit {
+main .performance_section .performance .tab_desc .suspension .sus .sus_desc p.tit {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+main .performance_section .performance .tab_desc .technology .tech {
+  display: flex;
+  background-color: #fff;
+}
+main .performance_section .performance .tab_desc .technology .tech .tech_video {
+  width: 54%;
+}
+main .performance_section .performance .tab_desc .technology .tech .tech_video video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+main .performance_section .performance .tab_desc .technology .tech .tech_desc {
+  width: 46%;
+  padding: 150px 50px 0;
+  z-index: 1;
+}
+main .performance_section .performance .tab_desc .technology .tech .tech_desc p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+main .performance_section .performance .tab_desc .technology .tech .tech_desc p.tit {
   font-weight: 700;
   text-align: center;
   margin-bottom: 15px;
