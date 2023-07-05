@@ -87,6 +87,7 @@ main {
   .visual {
     padding-top: 70px;
     overflow: hidden;
+    border-bottom: 1px solid #1e1e1e;
 
     .visual_bg {
       position: relative;
@@ -197,6 +198,7 @@ main {
   .design_section {
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #1e1e1e;
 
     .design_bg {
       position: relative;
@@ -416,6 +418,7 @@ main {
 
   .color_section {
     height: calc(100vh - 70px);
+    border-bottom: 1px solid #1e1e1e;
 
     h1 {
       font-size: 3rem;
@@ -433,6 +436,7 @@ main {
       .swiper-wrapper {
 
         li {
+          width: 100%;
           height: 700px;
           opacity: 0;
           transition: all 0.3s;
@@ -513,30 +517,180 @@ main {
     }
   }
 
-  .gallery {
-    display: flex;
-    width: 100%;
-    padding: 100px 0;
 
+  .gallery_section {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+    .tit {
+      // padding: 50px 0 25px 0;
 
-    .gallery_left,
-    .gallery_center,
-    .gallery_right {
-      width: 34%;
-
-      .img_box {
-        padding: 4px;
-
-        img {
-          width: 100%;
-          cursor: pointer;
-
-          &.hei {}
-        }
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+        color: #fff;
       }
     }
 
-    .gallery_center {}
+    .gallery {
+      display: flex;
+      width: 100%;
 
+      .gallery_left,
+      .gallery_center,
+      .gallery_right {
+        width: 100%;
+
+        .img_box {
+          position: relative;
+          padding: 4px;
+
+          &::before,
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: #fff;
+            width: 0;
+            height: 0;
+            transition: .3s;
+          }
+
+          &:hover {
+            &::before {
+              width: 4px;
+              height: 100%;
+            }
+
+            &::after {
+              width: 100%;
+              height: 4px;
+            }
+
+            .gallery_img {
+              &::before {
+                width: 100.5%;
+                height: 4px;
+              }
+
+              &::after {
+                width: 4px;
+                height: 100%;
+              }
+
+              img {
+                transform: scale(1.2);
+              }
+            }
+
+          }
+
+          &::before {
+            left: -3px;
+            bottom: 0;
+          }
+
+          &::after {
+            right: 0px;
+            bottom: 0px;
+          }
+
+          .gallery_img {
+            overflow: hidden;
+
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              left: -3px;
+              top: -3px;
+              background-color: #fff;
+              width: 0;
+              height: 0;
+              transition: .3s;
+            }
+
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              background-color: #fff;
+              width: 0;
+              height: 0;
+              transition: .3s;
+            }
+
+
+            img {
+              width: 100%;
+              height: 100%;
+              transition: .6s;
+              cursor: pointer;
+            }
+
+          }
+        }
+
+
+      }
+
+      .gallery_left {
+        width: 28%;
+
+        .img_box {
+          padding-left: 0;
+
+          &:nth-child(1) {
+            .gallery_img {
+              height: 580px;
+            }
+          }
+
+
+          &:nth-child(2) {
+            .gallery_img {}
+          }
+        }
+      }
+
+      .gallery_center {
+        width: 36%;
+
+        .img_box {
+          &:nth-child(1) {
+            .gallery_img {
+              
+            }
+          }
+
+
+          &:nth-child(2) {
+            .gallery_img {
+              height: 580px;
+            }
+          }
+        }
+      }
+
+      .gallery_right {
+        width: 36%;
+
+        .img_box {
+          padding-right: 0;
+
+          &:nth-child(1) {
+            .gallery_img {}
+          }
+
+
+          &:nth-child(2) {
+            .gallery_img {}
+          }
+        }
+      }
+
+
+    }
   }
 }

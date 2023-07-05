@@ -69,6 +69,7 @@ img {
 main .visual {
   padding-top: 70px;
   overflow: hidden;
+  border-bottom: 1px solid #1e1e1e;
 }
 main .visual .visual_bg {
   position: relative;
@@ -158,6 +159,7 @@ main .visual .arrow_bottom::before {
 main .design_section {
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #1e1e1e;
 }
 main .design_section .design_bg {
   position: relative;
@@ -345,6 +347,7 @@ main .design_section .popup .popup_close:hover::before, main .design_section .po
 }
 main .color_section {
   height: calc(100vh - 70px);
+  border-bottom: 1px solid #1e1e1e;
 }
 main .color_section h1 {
   font-size: 3rem;
@@ -358,6 +361,7 @@ main .color_section .genesis_color {
   width: 100%;
 }
 main .color_section .genesis_color .swiper-wrapper li {
+  width: 100%;
   height: 700px;
   opacity: 0;
   transition: all 0.3s;
@@ -415,24 +419,141 @@ main .color_section .genesis_color .swiper-button-next {
   left: auto;
   right: 13%;
 }
-main .gallery {
+main .gallery_section {
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+main .gallery_section .tit h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+}
+main .gallery_section .gallery {
   display: flex;
   width: 100%;
-  padding: 100px 0;
 }
-main .gallery .gallery_left,
-main .gallery .gallery_center,
-main .gallery .gallery_right {
-  width: 34%;
+main .gallery_section .gallery .gallery_left,
+main .gallery_section .gallery .gallery_center,
+main .gallery_section .gallery .gallery_right {
+  width: 100%;
 }
-main .gallery .gallery_left .img_box,
-main .gallery .gallery_center .img_box,
-main .gallery .gallery_right .img_box {
+main .gallery_section .gallery .gallery_left .img_box,
+main .gallery_section .gallery .gallery_center .img_box,
+main .gallery_section .gallery .gallery_right .img_box {
+  position: relative;
   padding: 4px;
 }
-main .gallery .gallery_left .img_box img,
-main .gallery .gallery_center .img_box img,
-main .gallery .gallery_right .img_box img {
+main .gallery_section .gallery .gallery_left .img_box::before, main .gallery_section .gallery .gallery_left .img_box::after,
+main .gallery_section .gallery .gallery_center .img_box::before,
+main .gallery_section .gallery .gallery_center .img_box::after,
+main .gallery_section .gallery .gallery_right .img_box::before,
+main .gallery_section .gallery .gallery_right .img_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+}
+main .gallery_section .gallery .gallery_left .img_box:hover::before,
+main .gallery_section .gallery .gallery_center .img_box:hover::before,
+main .gallery_section .gallery .gallery_right .img_box:hover::before {
+  width: 4px;
+  height: 100%;
+}
+main .gallery_section .gallery .gallery_left .img_box:hover::after,
+main .gallery_section .gallery .gallery_center .img_box:hover::after,
+main .gallery_section .gallery .gallery_right .img_box:hover::after {
   width: 100%;
+  height: 4px;
+}
+main .gallery_section .gallery .gallery_left .img_box:hover .gallery_img::before,
+main .gallery_section .gallery .gallery_center .img_box:hover .gallery_img::before,
+main .gallery_section .gallery .gallery_right .img_box:hover .gallery_img::before {
+  width: 100.5%;
+  height: 4px;
+}
+main .gallery_section .gallery .gallery_left .img_box:hover .gallery_img::after,
+main .gallery_section .gallery .gallery_center .img_box:hover .gallery_img::after,
+main .gallery_section .gallery .gallery_right .img_box:hover .gallery_img::after {
+  width: 4px;
+  height: 100%;
+}
+main .gallery_section .gallery .gallery_left .img_box:hover .gallery_img img,
+main .gallery_section .gallery .gallery_center .img_box:hover .gallery_img img,
+main .gallery_section .gallery .gallery_right .img_box:hover .gallery_img img {
+  transform: scale(1.2);
+}
+main .gallery_section .gallery .gallery_left .img_box::before,
+main .gallery_section .gallery .gallery_center .img_box::before,
+main .gallery_section .gallery .gallery_right .img_box::before {
+  left: -3px;
+  bottom: 0;
+}
+main .gallery_section .gallery .gallery_left .img_box::after,
+main .gallery_section .gallery .gallery_center .img_box::after,
+main .gallery_section .gallery .gallery_right .img_box::after {
+  right: 0px;
+  bottom: 0px;
+}
+main .gallery_section .gallery .gallery_left .img_box .gallery_img,
+main .gallery_section .gallery .gallery_center .img_box .gallery_img,
+main .gallery_section .gallery .gallery_right .img_box .gallery_img {
+  overflow: hidden;
+}
+main .gallery_section .gallery .gallery_left .img_box .gallery_img::before,
+main .gallery_section .gallery .gallery_center .img_box .gallery_img::before,
+main .gallery_section .gallery .gallery_right .img_box .gallery_img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  background-color: #fff;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+}
+main .gallery_section .gallery .gallery_left .img_box .gallery_img::after,
+main .gallery_section .gallery .gallery_center .img_box .gallery_img::after,
+main .gallery_section .gallery .gallery_right .img_box .gallery_img::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: #fff;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+}
+main .gallery_section .gallery .gallery_left .img_box .gallery_img img,
+main .gallery_section .gallery .gallery_center .img_box .gallery_img img,
+main .gallery_section .gallery .gallery_right .img_box .gallery_img img {
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
   cursor: pointer;
+}
+main .gallery_section .gallery .gallery_left {
+  width: 28%;
+}
+main .gallery_section .gallery .gallery_left .img_box {
+  padding-left: 0;
+}
+main .gallery_section .gallery .gallery_left .img_box:nth-child(1) .gallery_img {
+  height: 580px;
+}
+main .gallery_section .gallery .gallery_center {
+  width: 36%;
+}
+main .gallery_section .gallery .gallery_center .img_box:nth-child(2) .gallery_img {
+  height: 580px;
+}
+main .gallery_section .gallery .gallery_right {
+  width: 36%;
+}
+main .gallery_section .gallery .gallery_right .img_box {
+  padding-right: 0;
 }/*# sourceMappingURL=main.css.map */
