@@ -66,6 +66,168 @@ img {
   right: 50%;
 }
 
+main {
+  /* .gallery {
+      display: flex;
+      width: 100%;
+
+      .gallery_left,
+      .gallery_center,
+      .gallery_right {
+        width: 100%;
+
+        .img_box {
+          position: relative;
+          padding: 4px;
+
+          &::before,
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: #fff;
+            width: 0;
+            height: 0;
+            transition: .3s;
+          }
+
+          &:hover {
+            &::before {
+              width: 4px;
+              height: 100%;
+            }
+
+            &::after {
+              width: 100%;
+              height: 4px;
+            }
+
+            .gallery_img {
+              &::before {
+                width: 100.5%;
+                height: 4px;
+              }
+
+              &::after {
+                width: 4px;
+                height: 100%;
+              }
+
+              img {
+                transform: scale(1.2);
+              }
+            }
+
+          }
+
+          &::before {
+            left: -3px;
+            bottom: 0;
+          }
+
+          &::after {
+            right: 0px;
+            bottom: 0px;
+          }
+
+          .gallery_img {
+            overflow: hidden;
+
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              left: -3px;
+              top: -3px;
+              background-color: #fff;
+              width: 0;
+              height: 0;
+              transition: .3s;
+            }
+
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              background-color: #fff;
+              width: 0;
+              height: 0;
+              transition: .3s;
+            }
+
+
+            img {
+              width: 100%;
+              height: 100%;
+              transition: .6s;
+              cursor: pointer;
+            }
+
+          }
+        }
+
+
+      }
+
+      .gallery_left {
+        width: 28%;
+
+        .img_box {
+          padding-left: 0;
+
+          &:nth-child(1) {
+            .gallery_img {
+              height: 580px;
+            }
+          }
+
+
+          &:nth-child(2) {
+            .gallery_img {}
+          }
+        }
+      }
+
+      .gallery_center {
+        width: 36%;
+
+        .img_box {
+          &:nth-child(1) {
+            .gallery_img {}
+          }
+
+
+          &:nth-child(2) {
+            .gallery_img {
+              height: 580px;
+            }
+          }
+        }
+      }
+
+      .gallery_right {
+        width: 36%;
+
+        .img_box {
+          padding-right: 0;
+
+          &:nth-child(1) {
+            .gallery_img {}
+          }
+
+
+          &:nth-child(2) {
+            .gallery_img {}
+          }
+        }
+      }
+
+
+    }
+  } */
+}
 main .visual {
   padding-top: 70px;
   overflow: hidden;
@@ -434,193 +596,75 @@ main .color_section .genesis_color .swiper-button-next {
   left: auto;
   right: 13%;
 }
-main .gallery_section {
+main .performance_section {
   height: calc(100vh - 70px);
-  overflow: hidden;
-  /* .gallery {
-      display: flex;
-      width: 100%;
-
-      .gallery_left,
-      .gallery_center,
-      .gallery_right {
-        width: 100%;
-
-        .img_box {
-          position: relative;
-          padding: 4px;
-
-          &::before,
-          &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            background-color: #fff;
-            width: 0;
-            height: 0;
-            transition: .3s;
-          }
-
-          &:hover {
-            &::before {
-              width: 4px;
-              height: 100%;
-            }
-
-            &::after {
-              width: 100%;
-              height: 4px;
-            }
-
-            .gallery_img {
-              &::before {
-                width: 100.5%;
-                height: 4px;
-              }
-
-              &::after {
-                width: 4px;
-                height: 100%;
-              }
-
-              img {
-                transform: scale(1.2);
-              }
-            }
-
-          }
-
-          &::before {
-            left: -3px;
-            bottom: 0;
-          }
-
-          &::after {
-            right: 0px;
-            bottom: 0px;
-          }
-
-          .gallery_img {
-            overflow: hidden;
-
-            &::before {
-              content: '';
-              display: block;
-              position: absolute;
-              left: -3px;
-              top: -3px;
-              background-color: #fff;
-              width: 0;
-              height: 0;
-              transition: .3s;
-            }
-
-            &::after {
-              content: '';
-              display: block;
-              position: absolute;
-              right: 0px;
-              top: 0px;
-              background-color: #fff;
-              width: 0;
-              height: 0;
-              transition: .3s;
-            }
-
-
-            img {
-              width: 100%;
-              height: 100%;
-              transition: .6s;
-              cursor: pointer;
-            }
-
-          }
-        }
-
-
-      }
-
-      .gallery_left {
-        width: 28%;
-
-        .img_box {
-          padding-left: 0;
-
-          &:nth-child(1) {
-            .gallery_img {
-              height: 580px;
-            }
-          }
-
-
-          &:nth-child(2) {
-            .gallery_img {}
-          }
-        }
-      }
-
-      .gallery_center {
-        width: 36%;
-
-        .img_box {
-          &:nth-child(1) {
-            .gallery_img {}
-          }
-
-
-          &:nth-child(2) {
-            .gallery_img {
-              height: 580px;
-            }
-          }
-        }
-      }
-
-      .gallery_right {
-        width: 36%;
-
-        .img_box {
-          padding-right: 0;
-
-          &:nth-child(1) {
-            .gallery_img {}
-          }
-
-
-          &:nth-child(2) {
-            .gallery_img {}
-          }
-        }
-      }
-
-
-    }
-  } */
 }
-main .gallery_section .tit {
+main .performance_section .performance {
+  width: 1340px;
+  margin: 0 auto;
+}
+main .performance_section .performance h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: normal;
+  color: #fff;
   padding: 50px 0 25px 0;
 }
-main .gallery_section .tit h1 {
-  font-size: 3rem;
+main .performance_section .performance .tab {
+  display: flex;
+  border: 1px solid #fff;
+  border-bottom: none;
+}
+main .performance_section .performance .tab p {
+  width: 25%;
+  padding: 20px 0;
   text-align: center;
   color: #fff;
+  border-right: 1px solid #fff;
+  cursor: pointer;
 }
-main .gallery_section .gallery_swiper {
+main .performance_section .performance .tab p.on {
+  background-color: #fff;
+  color: #000;
+}
+main .performance_section .performance .tab p:last-child {
+  border-right: none;
+}
+main .performance_section .performance .tab_desc {
+  overflow: hidden;
+}
+main .performance_section .performance .tab_desc .suspension .sus {
+  position: relative;
   width: 100%;
-  height: 500px;
 }
-main .gallery_section .gallery_swiper .swiper-wrapper {
-  transition-timing-function: linear;
+main .performance_section .performance .tab_desc .suspension .sus::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, transparent, #111);
 }
-main .gallery_section .gallery_swiper .swiper-wrapper .swiper-slide {
-  margin-right: 40px;
-}
-main .gallery_section .gallery_swiper .swiper-wrapper .swiper-slide .gallery_img {
+main .performance_section .performance .tab_desc .suspension .sus .sus_bg {
   width: 100%;
   height: 100%;
 }
-main .gallery_section .gallery_swiper .swiper-wrapper .swiper-slide .gallery_img img {
-  width: 100%;
-  height: 100%;
+main .performance_section .performance .tab_desc .suspension .sus_desc {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  z-index: 2;
+  width: 40%;
+}
+main .performance_section .performance .tab_desc .suspension .sus_desc p {
+  color: #fff;
+  font-size: 18px;
+}
+main .performance_section .performance .tab_desc .suspension .sus_desc p.tit {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
 }/*# sourceMappingURL=main.css.map */

@@ -533,44 +533,99 @@ main {
   }
 
 
-  .gallery_section {
+  .performance_section {
     height: calc(100vh - 70px);
-    overflow: hidden;
 
-    .tit {
-      padding: 50px 0 25px 0;
+    .performance {
+      width: 1340px;
+      margin: 0 auto;
 
       h1 {
-        font-size: 3rem;
         text-align: center;
+        font-size: 3rem;
+        font-weight: normal;
         color: #fff;
+        padding: 50px 0 25px 0;
       }
-    }
 
-    .gallery_swiper {
-      width: 100%;
-      height: 500px;
-      .swiper-wrapper {
-        transition-timing-function: linear;
+      .tab {
+        display: flex;
+        border: 1px solid #fff;
+        border-bottom: none;
 
-        .swiper-slide {
-          margin-right: 40px;
-          .gallery_img {
+        p {
+          width: 25%;
+          padding: 20px 0;
+          text-align: center;
+          color: #fff;
+          border-right: 1px solid #fff;
+          cursor: pointer;
+
+          &.on {
+            background-color: #fff;
+            color: #000;
+          }
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+
+      .tab_desc {
+        overflow: hidden;
+
+        .suspension {
+
+          .sus {
+            position: relative;
             width: 100%;
-            // height: calc(50vh - 104px);
-            height: 100%;
-            // padding: 0 100px;
-            img {
+
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
               width: 100%;
               height: 100%;
+              background: linear-gradient(to left, transparent, #111);
+            }
+
+            .sus_bg {
+              width: 100%;
+              height: 100%;
+
+            }
+          }
+
+          .sus_desc {
+            position: absolute;
+            top: 70px;
+            left: 50px;
+            z-index: 2;
+            width: 40%;
+
+            p {
+              color: #fff;
+              font-size: 18px;
+
+              &.tit {
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 15px;
+                font-size: 26px;
+              }
             }
           }
         }
       }
     }
+  }
 
 
-    /* .gallery {
+
+  /* .gallery {
       display: flex;
       width: 100%;
 
@@ -730,5 +785,4 @@ main {
 
     }
   } */
-  }
 }
