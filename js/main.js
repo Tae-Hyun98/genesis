@@ -47,8 +47,25 @@ pic.forEach((item, idx) => {
 });
 
 
-const 
+const tabOn = document.querySelectorAll('.performance .tab p');
+const tabDesc = document.querySelectorAll('.performance .tab_desc>div');
 
+tabOn.forEach((item,idx)=>{
+  item.addEventListener('click',()=>{
+    for(let el of tabOn){
+      el.classList.remove('on');
+    }
+    tabOn[idx].classList.add('on');
+
+    tabDesc.forEach((descitem,i)=>{
+      if(idx===i){
+        tabDesc[idx].style.display='block'
+      }else{
+        descitem.style.display='none'
+      }
+    })
+  })
+})
 
 
 
@@ -69,4 +86,3 @@ const swiper = new Swiper('.genesis_color', {
 
 
 });
-

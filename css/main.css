@@ -341,7 +341,7 @@ main .design_section .design_text {
   color: #fff;
 }
 main .design_section .design_text h2 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   padding-bottom: 50px;
   letter-spacing: 2px;
   font-weight: 500;
@@ -354,7 +354,7 @@ main .design_section .design_text .design_desc::before {
   content: "";
   position: absolute;
   width: 1px;
-  height: 74px;
+  height: 82px;
   background-color: #fff;
   margin-right: 20px;
 }
@@ -362,20 +362,25 @@ main .design_section .design_text .design_desc p {
   width: 100%;
   font-size: 18px;
   margin-left: 10px;
+  line-height: 1.5;
 }
 main .design_section .design_text .design_btn {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 main .design_section .design_text .design_btn button {
   position: relative;
   display: inline-block;
-  width: 200px;
+  width: 220px;
   height: 50px;
+  margin-right: 30px;
   background: none;
   color: #fff;
   border: 1px solid #ccc;
   cursor: pointer;
+}
+main .design_section .design_text .design_btn button:last-child {
+  margin-right: 0;
 }
 main .design_section .design_text .design_btn button span {
   position: relative;
@@ -513,21 +518,23 @@ main .color_section {
   border-bottom: 1px solid #1e1e1e;
 }
 main .color_section h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: normal;
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   color: #fff;
 }
 main .color_section .genesis_color {
   position: relative;
   width: 100%;
+  padding: 0 200px;
+  margin-top: 60px;
 }
 main .color_section .genesis_color .swiper-wrapper li {
   width: 100%;
-  height: 700px;
   opacity: 0;
   transition: all 0.3s;
+  padding: 0 50px;
 }
 main .color_section .genesis_color .swiper-wrapper li.swiper-slide-active {
   opacity: 1;
@@ -540,6 +547,7 @@ main .color_section .genesis_color .swiper-wrapper li.swiper-slide-next {
   scale: 0.8;
 }
 main .color_section .genesis_color .swiper-wrapper li .color_box img {
+  width: 100%;
   margin: 0 auto;
   transition: 0.3s;
 }
@@ -602,15 +610,14 @@ main .performance_section {
   overflow: hidden;
 }
 main .performance_section .performance {
-  width: 1340px;
-  margin: 0 auto;
+  padding: 0 190px;
 }
 main .performance_section .performance h1 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: normal;
   color: #fff;
-  padding: 50px 0 25px 0;
+  margin: 50px 0 25px 0;
 }
 main .performance_section .performance .tab {
   display: flex;
@@ -636,9 +643,6 @@ main .performance_section .performance .tab_desc {
   width: 100%;
   overflow: hidden;
 }
-main .performance_section .performance .tab_desc .suspension {
-  display: none;
-}
 main .performance_section .performance .tab_desc .suspension .sus {
   position: relative;
   width: 100%;
@@ -653,7 +657,7 @@ main .performance_section .performance .tab_desc .suspension .sus::before {
   height: 100%;
   background: linear-gradient(to left, transparent, #111);
 }
-main .performance_section .performance .tab_desc .suspension .sus .sus_bg {
+main .performance_section .performance .tab_desc .suspension .sus .sus_img {
   width: 100%;
   height: 100%;
 }
@@ -667,6 +671,7 @@ main .performance_section .performance .tab_desc .suspension .sus .sus_desc {
 main .performance_section .performance .tab_desc .suspension .sus .sus_desc p {
   color: #fff;
   font-size: 18px;
+  line-height: 1.5;
 }
 main .performance_section .performance .tab_desc .suspension .sus .sus_desc p.tit {
   font-weight: 700;
@@ -674,9 +679,12 @@ main .performance_section .performance .tab_desc .suspension .sus .sus_desc p.ti
   margin-bottom: 15px;
   font-size: 26px;
 }
+main .performance_section .performance .tab_desc .technology {
+  display: none;
+}
 main .performance_section .performance .tab_desc .technology .tech {
   display: flex;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 main .performance_section .performance .tab_desc .technology .tech .tech_video {
   width: 54%;
@@ -694,8 +702,76 @@ main .performance_section .performance .tab_desc .technology .tech .tech_desc {
 main .performance_section .performance .tab_desc .technology .tech .tech_desc p {
   font-size: 18px;
   line-height: 1.5;
+  color: #fff;
 }
 main .performance_section .performance .tab_desc .technology .tech .tech_desc p.tit {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+main .performance_section .performance .tab_desc .buildto {
+  display: none;
+}
+main .performance_section .performance .tab_desc .buildto .build {
+  position: relative;
+}
+main .performance_section .performance .tab_desc .buildto .build::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, transparent, #111);
+}
+main .performance_section .performance .tab_desc .buildto .build .build_img {
+  width: 100%;
+}
+main .performance_section .performance .tab_desc .buildto .build .build_desc {
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  width: 48%;
+  z-index: 1;
+  padding: 0 60px;
+}
+main .performance_section .performance .tab_desc .buildto .build .build_desc p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+main .performance_section .performance .tab_desc .buildto .build .build_desc p.tit {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+main .performance_section .performance .tab_desc .gvengine {
+  display: none;
+}
+main .performance_section .performance .tab_desc .gvengine .engine {
+  position: relative;
+}
+main .performance_section .performance .tab_desc .gvengine .engine .engine_img {
+  width: 140%;
+  height: 100%;
+}
+main .performance_section .performance .tab_desc .gvengine .engine .engine_desc {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 48%;
+  z-index: 1;
+  padding: 90px 60px;
+}
+main .performance_section .performance .tab_desc .gvengine .engine .engine_desc p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+main .performance_section .performance .tab_desc .gvengine .engine .engine_desc p.tit {
   font-weight: 700;
   text-align: center;
   margin-bottom: 15px;
