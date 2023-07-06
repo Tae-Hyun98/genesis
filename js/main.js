@@ -3,10 +3,13 @@ const interiorPopup = document.querySelector('.interior_pop');
 const designPopupClose = document.querySelectorAll('.popup_close');
 const exterior = document.querySelector('.exterior');
 const interior = document.querySelector('.interior');
+
+
 //외장디자인 팝업
 exterior.addEventListener('click', () => {
   exteriorPopup.style.opacity = '1';
   exteriorPopup.style.scale = '1';
+  popupAni();
 
   designPopupClose[0].addEventListener('click', () => {
     exteriorPopup.style.opacity = '0';
@@ -18,6 +21,7 @@ exterior.addEventListener('click', () => {
 interior.addEventListener('click', () => {
   interiorPopup.style.opacity = '1';
   interiorPopup.style.scale = '1';
+  popupInterAni();
 
   designPopupClose[1].addEventListener('click', () => {
     interiorPopup.style.opacity = '0';
@@ -26,6 +30,50 @@ interior.addEventListener('click', () => {
 
 })
 
+
+function popupAni() {
+  const exterImg = document.querySelectorAll('.exter_img');
+  const exterDesc = document.querySelectorAll('.exter_desc');
+  gsap.from(exterImg, 1, {
+    delay: 0.3,
+    x: -200,
+    opacity: 0
+  })
+
+  gsap.from(exterDesc, 1, {
+    delay: 0.3,
+    x: 200,
+    opacity: 0
+  })
+
+  gsap.to(designPopupClose[0], 1, {
+    delay: 0.8,
+    opacity: 1
+  })
+
+}
+
+function popupInterAni() {
+  const interImg = document.querySelectorAll('.inter_img');
+  const interDesc = document.querySelectorAll('.inter_desc');
+  gsap.from(interImg, 1, {
+    delay: 0.3,
+    x: -200,
+    opacity: 0
+  })
+
+  gsap.from(interDesc, 1, {
+    delay: 0.3,
+    x: 200,
+    opacity: 0
+  })
+
+  gsap.to(designPopupClose[1], 1, {
+    delay: 0.8,
+    opacity: 1
+  })
+
+}
 //color섹션에서 이미지클릭시 scale커지는거
 const pic = document.querySelectorAll('.genesis_color li');
 const swiimg = document.querySelectorAll('.genesis_color li img');
@@ -65,8 +113,26 @@ tabOn.forEach((item, idx) => {
         descitem.style.display = 'none'
       }
     })
-
-    if (idx === 3) {
+    if (idx === 0) {
+      t3.from(susDesc, 1, {
+        opacity: 0,
+        x: -200
+      })
+    } else if (idx === 1) {
+      gsap.from(techDesc, 1, {
+        opacity: 0,
+        x: 200
+      })
+    } else if (idx === 2) {
+      gsap.from(buildDesc, 1, {
+        opacity: 0,
+        y: 200
+      })
+    } else if (idx === 3) {
+      gsap.from(engineDesc, 1, {
+        opacity: 0,
+        y: 200
+      })
       engineCount();
     }
   })
@@ -81,7 +147,7 @@ function engineCount() {
   let kgf = 0;
   setInterval(() => {
     if (ps === 304) {
-      clearInterval(count);
+      clearInterval();
       return false;
     }
     ps += 1;
@@ -100,6 +166,108 @@ function engineCount() {
 
 
 
+
+
+//gsap애니메이션
+const navigation = document.querySelectorAll('.nav_box li a');
+const section = document.querySelectorAll('.content>section');
+const arrow = document.querySelector('.arrow_bottom');
+
+navigation.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    section.forEach((item, i) => {
+      if (idx === i) {
+        navigation[idx].classList.add('on');
+
+        gsap.to(window, 0.4, {
+          scrollTo: {
+            y: section[idx],
+            offsetY: 70
+          }
+        })
+      }
+    })
+
+  })
+})
+
+arrow.addEventListener('click', () => {
+  gsap.to(window, 0.4, {
+    scrollTo: {
+      y: section[1],
+      offsetY: 70
+    }
+  })
+})
+
+
+//design section 애니메이션
+const designTit = document.querySelector('.design_text h2');
+const designDesc = document.querySelector('.design_desc');
+const designBtn = document.querySelector('.design_desc .design_btn');
+gsap.registerPlugin(ScrollTrigger);
+
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: section[1],
+    start: 'top 40%'
+  },
+})
+tl.from(designTit, 0.7, {
+  y: 100,
+  opacity: 0
+}).from(designDesc, 0.4, {
+  y: 100,
+  opacity: 0
+}).from(designBtn, 0.4, {
+  x: 200,
+  opacity: 0
+})
+
+
+const colorTit = document.querySelector('.color_section h1');
+const carImg = document.querySelectorAll('.swiper-slide .color_box');
+const colorSelect = document.querySelector('.genesis_color');
+
+let t2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: section[2],
+    start: 'top 40%',
+  },
+})
+t2.from(colorTit, 0.6, {
+  scale: 0,
+  opacity: 0
+}).from(colorSelect, 0.4, {
+  opacity: 0
+}).from(carImg, 1, {
+  x: 500,
+})
+
+const performance = document.querySelector('.performance');
+const susDesc = document.querySelector('.sus_desc');
+const techDesc = document.querySelector('.tech_desc');
+const buildDesc = document.querySelector('.build_desc');
+const engineDesc = document.querySelector('.engine_desc');
+
+let t3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: section[3],
+    start: 'top 40%',
+  },
+})
+t3.from(performance, 0.7, {
+  scale: 0,
+  opacity: 0
+}).from(susDesc, 0.5, {
+  opacity: 0,
+  x: -200
+})
+
+
+
+//스와이퍼
 const swiper = new Swiper('.genesis_color', {
   speed: 1000,
   slidesPerView: 'auto',
@@ -119,15 +287,13 @@ const swiper = new Swiper('.genesis_color', {
 
 const gallerySwiper = new Swiper('.gallery_div', {
   loop: true,
-  speed: 1000,
-  slidesPerView: 3,
+  speed: 500,
+  slidesPerView: 'auto',
   loopAdditionalSlides: 1,
   loopedSlides: 2,
-  slidesPerGroup: 1,
-  spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
-    delay: 2000
+    delay: 3000
   }
 
 });
@@ -141,26 +307,3 @@ for (let i of slides) {
     gallerySwiper.autoplay.start();
   });
 }
-
-
-//gsap애니메이션
-const navigation = document.querySelectorAll('.nav_box li a');
-const design = document.querySelectorAll('.content>section');
-navigation.forEach((item, idx) => {
-  item.addEventListener('click', () => {
-    design.forEach((item, i) => {
-      if (idx === i) {
-
-        navigation[idx].classList.add('on');
-
-        gsap.to(window, 0.4, {
-          scrollTo: {
-            y: design[idx],
-            offsetY: 70
-          }
-        })
-      }
-    })
-
-  })
-})
