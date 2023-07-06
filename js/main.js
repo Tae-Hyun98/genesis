@@ -216,7 +216,7 @@ gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: section[1],
-    start: 'top 40%'
+    start: 'top 40%',
   },
 })
 tl.from(designTit, 0.7, {
@@ -293,18 +293,18 @@ const swiper = new Swiper('.genesis_color', {
 
 const gallerySwiper = new Swiper('.gallery_div', {
   loop: true,
-  speed: 500,
+  speed: 800,
   slidesPerView: 'auto',
   loopAdditionalSlides: 1,
   loopedSlides: 2,
   centeredSlides: true,
-  autoplay: {
-    delay: 3000
-  }
+  /* autoplay: {
+    delay: 5000
+  } */
 
 });
 
-let slides = document.querySelectorAll('.swiper-slide');
+/* let slides = document.querySelectorAll('.swiper-slide');
 for (let i of slides) {
   i.addEventListener('mouseover', () => {
     gallerySwiper.autoplay.stop();
@@ -312,4 +312,4 @@ for (let i of slides) {
   i.addEventListener('mouseout', () => {
     gallerySwiper.autoplay.start();
   });
-}
+} */

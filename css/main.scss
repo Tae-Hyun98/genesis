@@ -552,7 +552,7 @@ main {
         font-size: 2.5rem;
         font-weight: normal;
         color: #fff;
-        margin: 30px 0;
+        padding: 35px 0;
       }
 
       .tab {
@@ -799,7 +799,6 @@ main {
   .gallery_section {
     width: 100%;
     overflow: hidden;
-    padding-bottom: 100px;
 
     .gallery {
       h1 {
@@ -807,7 +806,7 @@ main {
         color: #fff;
         text-align: center;
         font-size: 3rem;
-        margin: 30px 0;
+        padding: 35px 0;
         letter-spacing: 5px;
       }
 
@@ -816,10 +815,11 @@ main {
         padding-top: 100px;
 
         .swiper-slide {
-          width: 50%;
+          width: 60%;
           cursor: pointer;
           transition: .3s;
           border: 1px solid #1e1e1e;
+          transform: scale(0.8);
 
           &:hover {
             .imgbox {
@@ -830,36 +830,33 @@ main {
           }
 
           &.swiper-slide-active {
-            width: 50%;
-            transform: scale(1);
-            transform: translateY(-15%);
-            z-index: 3;
-
-            .imgbox {
-              margin: 0 auto;
-              overflow: hidden;
-            }
+            width: 60%;
+            transform: translateY(-15%) scale(1);
           }
 
           &.swiper-slide-prev {
-            transform: translateX(10%);
-            transform: scale(0.8);
+            transform: translateX(5%) scale(0.8);
           }
 
           &.swiper-slide-next {
-            transform: translateX(-10%);
-            transform: scale(0.8);
+            transform: translateX(-5%) scale(0.8);
           }
 
-          img {
-            width: 100%;
-            transition: .6s;
+          .imgbox {
+            overflow: hidden;
+            margin: 0 auto;
+
+
+            img {
+              width: 100%;
+              transition: .6s;
+            }
           }
         }
       }
 
       .util {
-        padding: 100px 0;
+        padding: 30px 0;
 
         ul {
           width: 100%;
