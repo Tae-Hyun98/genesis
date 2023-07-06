@@ -98,7 +98,7 @@ pic.forEach((item, idx) => {
 //performance 탭메뉴
 const tabOn = document.querySelectorAll('.performance .tab p');
 const tabDesc = document.querySelectorAll('.performance .tab_desc>div');
-
+const tabBg = document.querySelectorAll('.tab_desc>div>div');
 tabOn.forEach((item, idx) => {
   item.addEventListener('click', () => {
     for (let el of tabOn) {
@@ -109,6 +109,9 @@ tabOn.forEach((item, idx) => {
     tabDesc.forEach((descitem, i) => {
       if (idx === i) {
         tabDesc[idx].style.display = 'block'
+        gsap.from(tabBg[i], 1, {
+          opacity: 0
+        })
       } else {
         descitem.style.display = 'none'
       }
@@ -143,8 +146,10 @@ tabOn.forEach((item, idx) => {
 function engineCount() {
   const psCount = document.querySelector('.ps');
   const kgfCount = document.querySelector('.kgf');
+
   let ps = 0;
   let kgf = 0;
+
   setInterval(() => {
     if (ps === 304) {
       clearInterval();
@@ -242,7 +247,8 @@ t2.from(colorTit, 0.6, {
 }).from(colorSelect, 0.4, {
   opacity: 0
 }).from(carImg, 1, {
-  x: 500,
+  x: 1500,
+  opacity: 0
 })
 
 const performance = document.querySelector('.performance');
