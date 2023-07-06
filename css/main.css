@@ -805,17 +805,55 @@ main .performance_section .performance .tab_desc .gvengine .engine .engine_desc 
 }
 main .gallery_section {
   width: 100%;
-  height: calc(100vh - 70px);
   overflow: hidden;
+  padding-bottom: 100px;
 }
 main .gallery_section .gallery h1 {
   color: #fff;
   text-align: center;
+  font-size: 3rem;
+  margin: 30px 0;
 }
 main .gallery_section .gallery .gallery_div {
-  height: 500px;
-}
-main .gallery_section .gallery .gallery_div img {
   width: 100%;
-  height: 100%;
+  padding-top: 100px;
+}
+main .gallery_section .gallery .gallery_div .swiper-slide {
+  transition: 0.3s;
+}
+main .gallery_section .gallery .gallery_div .swiper-slide.swiper-slide-active {
+  transform: translateY(-20%);
+}
+main .gallery_section .gallery .gallery_div .swiper-slide img {
+  width: 100%;
+}
+main .gallery_section .gallery .util {
+  padding: 100px 0;
+}
+main .gallery_section .gallery .util ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .gallery_section .gallery .util ul li {
+  cursor: pointer;
+  padding: 50px;
+  overflow: hidden;
+}
+main .gallery_section .gallery .util ul li:hover .util_gif img {
+  scale: 1.2;
+}
+main .gallery_section .gallery .util ul li .util_gif {
+  width: 70px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+main .gallery_section .gallery .util ul li .util_gif img {
+  width: 100%;
+  transition: 0.3s;
+}
+main .gallery_section .gallery .util ul li p {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

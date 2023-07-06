@@ -103,7 +103,6 @@ function engineCount() {
 const swiper = new Swiper('.genesis_color', {
   speed: 1000,
   slidesPerView: 'auto',
-  centeredSlides: true,
 
   pagination: {
     el: '.swiper-pagination',
@@ -115,11 +114,53 @@ const swiper = new Swiper('.genesis_color', {
     prevEl: '.swiper-button-prev',
   },
 
-
 });
 
 
-const swiper1 = new Swiper('.gallery_div', {
-  slidesPerView: 2,
-  loop: true
+const gallerySwiper = new Swiper('.gallery_div', {
+  loop: true,
+  speed: 1000,
+  slidesPerView: 3,
+  loopAdditionalSlides: 1,
+  loopedSlides: 2,
+  slidesPerGroup: 1,
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2000
+  }
+
 });
+
+let slides = document.querySelectorAll('.swiper-slide');
+for (let i of slides) {
+  i.addEventListener('mouseover', () => {
+    gallerySwiper.autoplay.stop();
+  });
+  i.addEventListener('mouseout', () => {
+    gallerySwiper.autoplay.start();
+  });
+}
+
+
+//gsap애니메이션
+const navigation = document.querySelectorAll('.nav_box li a');
+const design = document.querySelectorAll('.content>section');
+navigation.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    design.forEach((item, i) => {
+      if (idx === i) {
+
+        navigation[idx].classList.add('on');
+
+        gsap.to(window, 0.4, {
+          scrollTo: {
+            y: design[idx],
+            offsetY: 70
+          }
+        })
+      }
+    })
+
+  })
+})
