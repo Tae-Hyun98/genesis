@@ -51,22 +51,52 @@ pic.forEach((item, idx) => {
 const tabOn = document.querySelectorAll('.performance .tab p');
 const tabDesc = document.querySelectorAll('.performance .tab_desc>div');
 
-tabOn.forEach((item,idx)=>{
-  item.addEventListener('click',()=>{
-    for(let el of tabOn){
+tabOn.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    for (let el of tabOn) {
       el.classList.remove('on');
     }
     tabOn[idx].classList.add('on');
 
-    tabDesc.forEach((descitem,i)=>{
-      if(idx===i){
-        tabDesc[idx].style.display='block'
-      }else{
-        descitem.style.display='none'
+    tabDesc.forEach((descitem, i) => {
+      if (idx === i) {
+        tabDesc[idx].style.display = 'block'
+      } else {
+        descitem.style.display = 'none'
       }
     })
+
+    if (idx === 3) {
+      engineCount();
+    }
   })
+
 })
+
+
+function engineCount() {
+  const psCount = document.querySelector('.ps');
+  const kgfCount = document.querySelector('.kgf');
+  let ps = 0;
+  let kgf = 0;
+  setInterval(() => {
+    if (ps === 304) {
+      clearInterval(count);
+      return false;
+    }
+    ps += 1;
+    psCount.innerHTML = ps;
+  }, 10)
+
+  setInterval(() => {
+    if (kgf === 43) {
+      clearInterval();
+      return false;
+    }
+    kgf += 1;
+    kgfCount.innerHTML = kgf + '.0';
+  }, 75)
+}
 
 
 
@@ -86,4 +116,10 @@ const swiper = new Swiper('.genesis_color', {
   },
 
 
+});
+
+
+const swiper1 = new Swiper('.gallery_div', {
+  slidesPerView: 2,
+  loop: true
 });
