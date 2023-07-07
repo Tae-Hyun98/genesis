@@ -170,38 +170,42 @@ main .design_section .design_bg img {
   width: 100%;
   height: 100%;
 }
-main .design_section .design_text {
-  display: flex;
-  flex-direction: column;
+main .design_section .design_inner {
   position: absolute;
-  top: 200px;
+  top: 0;
   left: 0;
-  padding-left: 200px;
-  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 100px 150px;
+}
+main .design_section .design_text {
+  width: 550px;
 }
 main .design_section .design_text h2 {
   font-size: 4.5rem;
   padding-bottom: 50px;
   letter-spacing: 2px;
   font-weight: 500;
+  color: #fff;
 }
 main .design_section .design_text .design_desc {
   position: relative;
-  width: 550px;
+  color: #fff;
 }
 main .design_section .design_text .design_desc::before {
   content: "";
   position: absolute;
   width: 1px;
   height: 82px;
+  bottom: 88px;
   background-color: #fff;
   margin-right: 20px;
 }
 main .design_section .design_text .design_desc p {
   width: 100%;
   font-size: 18px;
-  margin-left: 10px;
   line-height: 1.5;
+  margin-left: 10px;
 }
 main .design_section .design_text .design_btn {
   text-align: center;
@@ -244,6 +248,23 @@ main .design_section .design_text .design_btn button::before {
   height: 50px;
   transition: all 0.4s;
   opacity: 0;
+}
+main .design_section .design_text2 {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 70px;
+}
+main .design_section .design_text2 .design_desc2 {
+  width: 560px;
+}
+main .design_section .design_text2 .design_desc2 p {
+  font-size: 30px;
+  color: #fff;
+}
+main .design_section .design_text2 .design_desc2 p.tit {
+  font-size: 22px;
+  padding-bottom: 30px;
 }
 main .design_section .popup {
   scale: 0;

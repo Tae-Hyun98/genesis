@@ -211,6 +211,9 @@ arrow.addEventListener('click', () => {
 const designTit = document.querySelector('.design_text h2');
 const designDesc = document.querySelector('.design_desc');
 const designBtn = document.querySelector('.design_desc .design_btn');
+const designDesc2 = document.querySelectorAll('.design_desc2 .tit');
+const designDesc3 = document.querySelectorAll('.design_desc2 .desc');
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -221,15 +224,34 @@ let tl = gsap.timeline({
   },
 })
 tl.from(designTit, 0.7, {
+    y: 100,
+    opacity: 0
+  })
+  .from(designDesc, 0.4, {
+    y: 100,
+    opacity: 0
+  }).from(designBtn, 0.4, {
+    y: 200,
+    opacity: 0
+  })
+
+
+let desc = gsap.timeline({
+  scrollTrigger: {
+    trigger: section[1],
+    start: 'top 40%',
+  },
+})
+
+desc.from(designDesc2, 0.7, {
   y: 100,
   opacity: 0
-}).from(designDesc, 0.4, {
+}).from(designDesc3, 0.5, {
   y: 100,
-  opacity: 0
-}).from(designBtn, 0.4, {
-  x: 200,
   opacity: 0
 })
+
+
 
 
 const colorTit = document.querySelector('.color_section h1');
@@ -252,6 +274,8 @@ t2.from(colorTit, 0.6, {
   opacity: 0
 })
 
+
+//performance 부분
 const performance = document.querySelector('.performance');
 const susDesc = document.querySelector('.sus_desc');
 const techDesc = document.querySelector('.tech_desc');
@@ -288,6 +312,7 @@ t4.from(gallery, 1, {
   opacity: 0,
   y: 100
 })
+
 
 util.forEach((item, idx) => {
   gsap.from(item, 0.4, {
@@ -329,13 +354,13 @@ const gallerySwiper = new Swiper('.gallery_div', {
   loopAdditionalSlides: 1,
   loopedSlides: 2,
   centeredSlides: true,
-  /* autoplay: {
+  autoplay: {
     delay: 5000
-  } */
+  }
 
 });
 
-/* let slides = document.querySelectorAll('.swiper-slide');
+let slides = document.querySelectorAll('.swiper-slide');
 for (let i of slides) {
   i.addEventListener('mouseover', () => {
     gallerySwiper.autoplay.stop();
@@ -343,4 +368,4 @@ for (let i of slides) {
   i.addEventListener('mouseout', () => {
     gallerySwiper.autoplay.start();
   });
-} */
+}
