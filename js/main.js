@@ -343,7 +343,7 @@ const gallerySwiper = new Swiper('.gallery_div', {
   loopedSlides: 2,
   centeredSlides: true,
   autoplay: {
-    delay: 5000
+    delay: 3500
   }
 
 });
