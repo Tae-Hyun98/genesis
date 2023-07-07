@@ -72,8 +72,9 @@ function popupInterAni() {
     delay: 0.8,
     opacity: 1
   })
-
 }
+
+
 //color섹션에서 이미지클릭시 scale커지는거
 const pic = document.querySelectorAll('.genesis_color li');
 const swiimg = document.querySelectorAll('.genesis_color li img');
@@ -270,6 +271,36 @@ t3.from(performance, 0.7, {
   opacity: 0,
   x: -200
 })
+
+const gallery = document.querySelector('.gallery_div');
+const util = document.querySelectorAll('.util ul li');
+let t4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: section[4],
+    start: 'top 40%',
+  },
+})
+t4.from('.gallery h1', 0.5, {
+  opacity: 0,
+  y: 100
+})
+t4.from(gallery, 1, {
+  opacity: 0,
+  y: 100
+})
+
+util.forEach((item, idx) => {
+  gsap.from(item, 0.4, {
+    scrollTrigger: {
+      trigger: section[4],
+      start: 'top 20%',
+    },
+    delay: (idx + 1) * 0.3,
+    opacity: 0,
+    y: 50
+  })
+})
+
 
 
 
