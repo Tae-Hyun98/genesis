@@ -223,7 +223,7 @@ let tl = gsap.timeline({
     start: 'top 40%',
   },
 })
-tl.from(designTit, 0.7, {
+tl.from(designTit, 0.6, {
     y: 100,
     opacity: 0
   })
@@ -233,25 +233,13 @@ tl.from(designTit, 0.7, {
   }).from(designBtn, 0.4, {
     y: 200,
     opacity: 0
+  }).from(designDesc2, 0.7, {
+    y: 100,
+    opacity: 0
+  }).from(designDesc3, 0.5, {
+    y: 100,
+    opacity: 0
   })
-
-
-let desc = gsap.timeline({
-  scrollTrigger: {
-    trigger: section[1],
-    start: 'top 40%',
-  },
-})
-
-desc.from(designDesc2, 0.7, {
-  y: 100,
-  opacity: 0
-}).from(designDesc3, 0.5, {
-  y: 100,
-  opacity: 0
-})
-
-
 
 
 const colorTit = document.querySelector('.color_section h1');
