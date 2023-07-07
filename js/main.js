@@ -97,9 +97,9 @@ pic.forEach((item, idx) => {
 
 
 //performance 탭메뉴
-const tabOn = document.querySelectorAll('.performance .tab p');
-const tabDesc = document.querySelectorAll('.performance .tab_desc>div');
-const tabBg = document.querySelectorAll('.tab_desc>div>div');
+const tabOn = document.querySelectorAll('.performance .tab>div');
+const tabDesc = document.querySelectorAll('.performance .tab_bg>div');
+const tabBg = document.querySelectorAll('.tab_bg>div>div');
 tabOn.forEach((item, idx) => {
   item.addEventListener('click', () => {
     for (let el of tabOn) {
@@ -110,29 +110,15 @@ tabOn.forEach((item, idx) => {
     tabDesc.forEach((descitem, i) => {
       if (idx === i) {
         tabDesc[idx].style.display = 'block'
-        gsap.from(tabBg[i], 1, {
+        gsap.from(tabBg[i], 0.8, {
           opacity: 0
         })
       } else {
         descitem.style.display = 'none'
       }
     })
-    if (idx === 0) {
-      t3.from(susDesc, 1, {
-        opacity: 0,
-        x: -200
-      })
-    } else if (idx === 1) {
-      gsap.from(techDesc, 1, {
-        opacity: 0,
-        x: 200
-      })
-    } else if (idx === 2) {
-      gsap.from(buildDesc, 1, {
-        opacity: 0,
-        y: 200
-      })
-    } else if (idx === 3) {
+   
+    if (idx === 3) {
       gsap.from(engineDesc, 1, {
         opacity: 0,
         y: 200
@@ -142,6 +128,19 @@ tabOn.forEach((item, idx) => {
   })
 
 })
+
+$(function () {
+
+  $(".tab_tit").click(function () {
+
+    $('.desc p').slideUp();
+    if ($(this).siblings('.desc').children('p').is(':hidden')) {
+      $(this).siblings('.desc').children('p').slideDown();
+    }
+
+  });
+
+});
 
 
 function engineCount() {
