@@ -55,7 +55,10 @@ img {
           font-size: 20px;
           text-align: center;
           letter-spacing: 1px;
-
+          background-color: #111;
+          &.on{
+            background-color: rgba($color: #fff, $alpha: 0.8);
+          }
           &::before,
           &::after {
             content: '';
@@ -606,18 +609,17 @@ main {
             }
           }
 
-          &.on {
-            .tab_tit {
-              background-color: #fff;
-              color: #000;
-            }
-          }
+          
         }
-
+        
         .tab_tit {
           cursor: pointer;
           text-align: center;
           height: 25%;
+          &.on {
+            background-color: #fff;
+            color: #000;
+        }
         }
 
         .desc {

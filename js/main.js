@@ -97,7 +97,7 @@ pic.forEach((item, idx) => {
 
 
 //performance 탭메뉴
-const tabOn = document.querySelectorAll('.performance .tab>div');
+const tabOn = document.querySelectorAll('.performance .tab .tab_tit');
 const tabDesc = document.querySelectorAll('.performance .tab_bg>div');
 const tabBg = document.querySelectorAll('.tab_bg>div>div');
 tabOn.forEach((item, idx) => {

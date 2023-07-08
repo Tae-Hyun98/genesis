@@ -50,6 +50,10 @@ img {
   font-size: 20px;
   text-align: center;
   letter-spacing: 1px;
+  background-color: #111;
+}
+.header .nav_box ul li a.on {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .header .nav_box ul li a::before, .header .nav_box ul li a::after {
   content: "";
@@ -498,14 +502,14 @@ main .performance_section .performance .tab > div {
 main .performance_section .performance .tab > div:first-child p {
   display: block;
 }
-main .performance_section .performance .tab > div.on .tab_tit {
-  background-color: #fff;
-  color: #000;
-}
 main .performance_section .performance .tab .tab_tit {
   cursor: pointer;
   text-align: center;
   height: 25%;
+}
+main .performance_section .performance .tab .tab_tit.on {
+  background-color: #fff;
+  color: #000;
 }
 main .performance_section .performance .tab .desc p {
   display: none;
