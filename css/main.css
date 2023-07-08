@@ -475,7 +475,7 @@ main .performance_section {
 }
 main .performance_section .performance {
   position: relative;
-  padding: 0 240px;
+  padding: 0 230px;
   overflow: hidden;
 }
 main .performance_section .performance h1 {
@@ -498,14 +498,16 @@ main .performance_section .performance .tab {
 }
 main .performance_section .performance .tab > div {
   color: #fff;
+  border-bottom: 1px solid #fff;
 }
 main .performance_section .performance .tab > div:first-child p {
   display: block;
 }
 main .performance_section .performance .tab .tab_tit {
+  padding: 30px 0;
   cursor: pointer;
   text-align: center;
-  height: 25%;
+  font-size: 20px;
 }
 main .performance_section .performance .tab .tab_tit.on {
   background-color: #fff;
@@ -513,10 +515,9 @@ main .performance_section .performance .tab .tab_tit.on {
 }
 main .performance_section .performance .tab .desc p {
   display: none;
-  padding: 15px 50px;
+  padding: 15px 40px;
+  line-height: 1.5;
   color: #fff;
-  border-bottom: 1px solid #fff;
-  border-right: 1px solid #fff;
 }
 main .performance_section .performance .tab_bg {
   width: 100%;
@@ -575,7 +576,7 @@ main .performance_section .performance .tab_bg .technology .tech::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 60%;
   height: 100%;
   background: linear-gradient(to left, transparent, #111);
 }
