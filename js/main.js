@@ -183,7 +183,7 @@ navigation.forEach((item, idx) => {
   item.addEventListener('click', () => {
     section.forEach((item, i) => {
       if (idx === i) {
-        navigation[idx].classList.add('on');
+        // navigation[idx].classList.add('on');
 
         gsap.to(window, 0.4, {
           scrollTo: {
