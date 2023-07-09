@@ -56,9 +56,11 @@ img {
           text-align: center;
           letter-spacing: 1px;
           background-color: #111;
-          &.on{
+
+          &.on {
             background-color: rgba($color: #fff, $alpha: 0.8);
           }
+
           &::before,
           &::after {
             content: '';
@@ -293,6 +295,10 @@ main {
               background-color: #fff
             }
 
+            &::after {
+              display: block;
+              color: #000;
+            }
           }
 
           &::before {
@@ -305,6 +311,15 @@ main {
             height: 50px;
             transition: all 0.4s;
             opacity: 0;
+          }
+
+          &::after {
+            content: 'click';
+            position: absolute;
+            left: -2px;
+            top: 2px;
+            transform: rotate(-45deg);
+            font-size: 16px;
           }
         }
 
@@ -603,24 +618,26 @@ main {
         &>div {
           color: #fff;
           border-bottom: 1px solid #fff;
+
           &:first-child {
             p {
               display: block;
             }
           }
 
-          
+
         }
-        
+
         .tab_tit {
           padding: 30px 0;
           cursor: pointer;
           text-align: center;
           font-size: 20px;
+
           &.on {
             background-color: #fff;
             color: #000;
-        }
+          }
         }
 
         .desc {
@@ -786,7 +803,6 @@ main {
               width: 48%;
               z-index: 1;
               padding: 90px 60px;
-
 
 
               p {

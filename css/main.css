@@ -242,6 +242,10 @@ main .design_section .design_text .design_btn button:hover::before {
   opacity: 1;
   background-color: #fff;
 }
+main .design_section .design_text .design_btn button:hover::after {
+  display: block;
+  color: #000;
+}
 main .design_section .design_text .design_btn button::before {
   content: "";
   display: block;
@@ -252,6 +256,14 @@ main .design_section .design_text .design_btn button::before {
   height: 50px;
   transition: all 0.4s;
   opacity: 0;
+}
+main .design_section .design_text .design_btn button::after {
+  content: "click";
+  position: absolute;
+  left: -2px;
+  top: 2px;
+  transform: rotate(-45deg);
+  font-size: 16px;
 }
 main .design_section .design_text2 {
   display: flex;
