@@ -593,7 +593,6 @@ main {
 
     .performance {
       position: relative;
-      padding: 0 230px;
       overflow: hidden;
 
       h1 {
@@ -606,6 +605,8 @@ main {
 
       .performance_inner {
         position: relative;
+        width: 1280px;
+        margin: 0 auto;
       }
 
       .tab {
@@ -644,7 +645,7 @@ main {
         .desc {
           p {
             display: none;
-            padding: 15px 40px;
+            padding: 15px 25px;
             line-height: 1.5;
             color: #fff;
           }

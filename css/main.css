@@ -487,7 +487,6 @@ main .performance_section {
 }
 main .performance_section .performance {
   position: relative;
-  padding: 0 230px;
   overflow: hidden;
 }
 main .performance_section .performance h1 {
@@ -499,6 +498,8 @@ main .performance_section .performance h1 {
 }
 main .performance_section .performance .performance_inner {
   position: relative;
+  width: 1280px;
+  margin: 0 auto;
 }
 main .performance_section .performance .tab {
   position: absolute;
@@ -527,7 +528,7 @@ main .performance_section .performance .tab .tab_tit.on {
 }
 main .performance_section .performance .tab .desc p {
   display: none;
-  padding: 15px 40px;
+  padding: 15px 25px;
   line-height: 1.5;
   color: #fff;
 }
