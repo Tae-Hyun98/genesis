@@ -39,7 +39,14 @@ img {
 
       li {
         &:hover {
+          a::before,
+          a::after {
+            width: 40%;
+          }
 
+        }
+        
+        &.on {
           a::before,
           a::after {
             width: 40%;
@@ -57,9 +64,6 @@ img {
           letter-spacing: 1px;
           background-color: #111;
 
-          &.on {
-            background-color: rgba($color: #fff, $alpha: 0.8);
-          }
 
           &::before,
           &::after {
@@ -71,14 +75,12 @@ img {
             width: 0;
             height: 1px;
             background-color: #fff;
-            transition: all 0.3s;
-
+            transition: all 0.2s;
           }
 
           &::after {
             left: auto;
             right: 50%;
-
           }
         }
 
@@ -296,8 +298,7 @@ main {
             }
 
             &::after {
-              display: block;
-              color: #000;
+              color: #ccc;
             }
           }
 
@@ -316,8 +317,8 @@ main {
           &::after {
             content: 'click';
             position: absolute;
-            left: -2px;
-            top: 2px;
+            left: -28px;
+            top: -15px;
             transform: rotate(-45deg);
             font-size: 16px;
           }

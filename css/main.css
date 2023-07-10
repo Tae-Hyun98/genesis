@@ -41,6 +41,10 @@ img {
 .header .nav_box ul li:hover a::after {
   width: 40%;
 }
+.header .nav_box ul li.on a::before,
+.header .nav_box ul li.on a::after {
+  width: 40%;
+}
 .header .nav_box ul li a {
   position: relative;
   display: block;
@@ -52,9 +56,6 @@ img {
   letter-spacing: 1px;
   background-color: #111;
 }
-.header .nav_box ul li a.on {
-  background-color: rgba(255, 255, 255, 0.8);
-}
 .header .nav_box ul li a::before, .header .nav_box ul li a::after {
   content: "";
   position: absolute;
@@ -64,7 +65,7 @@ img {
   width: 0;
   height: 1px;
   background-color: #fff;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 .header .nav_box ul li a::after {
   left: auto;
@@ -243,8 +244,7 @@ main .design_section .design_text .design_btn button:hover::before {
   background-color: #fff;
 }
 main .design_section .design_text .design_btn button:hover::after {
-  display: block;
-  color: #000;
+  color: #ccc;
 }
 main .design_section .design_text .design_btn button::before {
   content: "";
@@ -260,8 +260,8 @@ main .design_section .design_text .design_btn button::before {
 main .design_section .design_text .design_btn button::after {
   content: "click";
   position: absolute;
-  left: -2px;
-  top: 2px;
+  left: -28px;
+  top: -15px;
   transform: rotate(-45deg);
   font-size: 16px;
 }

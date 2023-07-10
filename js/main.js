@@ -117,7 +117,7 @@ tabOn.forEach((item, idx) => {
         descitem.style.display = 'none'
       }
     })
-   
+
     if (idx === 3) {
       gsap.from(engineDesc, 1, {
         opacity: 0,
@@ -171,20 +171,42 @@ function engineCount() {
 }
 
 
-
+//navigation on
+const visual = document.querySelector('.visual').offsetTop;
+const design = document.querySelector('.design_section').offsetTop - 200;
+const color = document.querySelector('.color_section').offsetTop - 200;
+const performanceSection = document.querySelector('.performance_section').offsetTop - 200;
+const gallerySection = document.querySelector('.gallery_section').offsetTop - 200;
+window.addEventListener('scroll', () => {
+  for (let nav of navigation) {
+    nav.classList.remove('on');
+  }
+  if (window.scrollY >= visual && window.scrollY <= design) {
+    navigation[0].classList.add('on');
+  } else if (window.scrollY >= design && window.scrollY <= color) {
+    navigation[1].classList.add('on');
+  } else if (window.scrollY >= color && window.scrollY <= performanceSection) {
+    navigation[2].classList.add('on')
+  } else if (window.scrollY >= performanceSection && window.scrollY <= gallerySection) {
+    navigation[3].classList.add('on')
+  } else if (window.scrollY >= gallerySection) {
+    navigation[4].classList.add('on')
+  }
+})
 
 
 //gsap애니메이션
-const navigation = document.querySelectorAll('.nav_box li a');
+const navigation = document.querySelectorAll('.nav_box li');
 const section = document.querySelectorAll('.content>section');
 const arrow = document.querySelector('.arrow_bottom');
 
 navigation.forEach((item, idx) => {
-  item.addEventListener('click', () => {
-    section.forEach((item, i) => {
-      if (idx === i) {
-        // navigation[idx].classList.add('on');
 
+  item.addEventListener('click', () => {
+
+    section.forEach((item, i) => {
+
+      if (idx === i) {
         gsap.to(window, 0.4, {
           scrollTo: {
             y: section[idx],
