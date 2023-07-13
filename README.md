@@ -205,6 +205,9 @@ function engineCount() {
 
 ------------
 
+## 6. 느낀점  
+- genesis 프로모션사이트를 제작하면서 스크롤 애니메이션 라이브러리인 gsap.js의 timeline에 대해 알게되었으며...
+
 
 
 
