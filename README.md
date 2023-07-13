@@ -56,7 +56,7 @@
 
 ## 5. 주요기능  
 ### 5-1. 섹션도달시 네비게이션 언더바  
-<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a" width=90%/>
+<img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/9c7143d6-634f-4c0d-9533-51939093f59e" width=90%/>
 
 #### 👇👇👇👇👇👇
 <details>
