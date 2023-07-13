@@ -100,29 +100,47 @@ window.addEventListener('scroll', () => {
 <details>
  <summary>🔎 코드보기</summary>
 
- #### 해당 섹션의 offsetTop값을 변수에 담은뒤 if문으로 논리연산자를 이용한 조건을 걸어 window.scrollY가 조건에 맞는위치에 있으면 해당 네비게이션에 클래스를 붙이고, 아니면 제거를 하도록 구현하였습니다.
+ #### 각 탭들에게 클릭이벤트를 주어 선택된 탭에게 클래스를 주어 선택된 탭과 같은 인덱스를 가진 배경이 나타나도록 조건을 걸어주었으며, 탭에대한 정보는 jQuery문법을 사용하여 정보가 숨겨져 있다면 slideDown으로 보이도록하였고, 아니라면 slideUp으로 숨겨지도록 구현하였습니다.
 ```javascript
-const visual = document.querySelector('.visual').offsetTop;
-const design = document.querySelector('.design_section').offsetTop - 200;
-const color = document.querySelector('.color_section').offsetTop - 200;
-const performanceSection = document.querySelector('.performance_section').offsetTop - 200;
-const gallerySection = document.querySelector('.gallery_section').offsetTop - 200;
+const tabOn = document.querySelectorAll('.performance .tab .tab_tit');
+const tabDesc = document.querySelectorAll('.performance .tab_bg>div');
+const tabBg = document.querySelectorAll('.tab_bg>div>div');
+tabOn.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    for (let el of tabOn) {
+      el.classList.remove('on');
+    }
+    tabOn[idx].classList.add('on');
 
-window.addEventListener('scroll', () => {
-  for (let nav of navigation) {
-    nav.classList.remove('on');
-  }
-  if (window.scrollY >= visual && window.scrollY <= design) {
-    navigation[0].classList.add('on');
-  } else if (window.scrollY >= design && window.scrollY <= color) {
-    navigation[1].classList.add('on');
-  } else if (window.scrollY >= color && window.scrollY <= performanceSection) {
-    navigation[2].classList.add('on')
-  } else if (window.scrollY >= performanceSection && window.scrollY <= gallerySection) {
-    navigation[3].classList.add('on')
-  } else if (window.scrollY >= gallerySection) {
-    navigation[4].classList.add('on')
-  }
+    tabDesc.forEach((descitem, i) => {
+      if (idx === i) {
+        tabDesc[idx].style.display = 'block'
+        gsap.from(tabBg[i], 0.8, {
+          opacity: 0
+        })
+      } else {
+        descitem.style.display = 'none'
+      }
+    })
+
+    if (idx === 3) {
+      gsap.from(engineDesc, 1, {
+        opacity: 0,
+        y: 200
+      })
+      engineCount();
+    }
+  })
+
+})
+
+$(function () {
+  $(".tab_tit").click(function () {
+    $('.desc p').slideUp();
+    if ($(this).siblings('.desc').children('p').is(':hidden')) {
+      $(this).siblings('.desc').children('p').slideDown();
+    }
+  });
 });
 ```
 </details>
