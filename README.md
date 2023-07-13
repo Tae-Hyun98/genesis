@@ -156,54 +156,56 @@ $(function () {
 <details>
  <summary>🔎 코드보기</summary>
 
- #### 각 탭들에게 클릭이벤트를 주어 선택된 탭에게 클래스를 주어 선택된 탭과 같은 인덱스를 가진 배경이 나타나도록 조건을 걸어주었으며, 탭에대한 정보는 jQuery문법을 사용하여 정보가 숨겨져 있다면 slideDown으로 보이도록하였고, 아니라면 slideUp으로 숨겨지도록 구현하였습니다.
+ #### setInterval을 사용하여 초기값을 0으로 지정한 변수를 선언해주고 그 변수가 if문에 해당하는 값에 도달하면 clearInterval로 중지되도록 구현을 하였습니다.
 ```javascript
-const tabOn = document.querySelectorAll('.performance .tab .tab_tit');
-const tabDesc = document.querySelectorAll('.performance .tab_bg>div');
-const tabBg = document.querySelectorAll('.tab_bg>div>div');
-tabOn.forEach((item, idx) => {
-  item.addEventListener('click', () => {
-    for (let el of tabOn) {
-      el.classList.remove('on');
+//인트로 카운트
+let countBox = document.querySelector('.counting');
+
+let count = 0;
+
+setInterval(() => {
+  if (count === 100) {
+    clearInterval(counting);
+    return false;
+  }
+  count += 1;
+  countBox.innerHTML = count + '%'
+}, 10);
+
+//performence engine카운트
+function engineCount() {
+  const psCount = document.querySelector('.ps');
+  const kgfCount = document.querySelector('.kgf');
+
+  let ps = 0;
+  let kgf = 0;
+
+  setInterval(() => {
+    if (ps === 304) {
+      clearInterval();
+      return false;
     }
-    tabOn[idx].classList.add('on');
+    ps += 1;
+    psCount.innerHTML = ps;
+  }, 10)
 
-    tabDesc.forEach((descitem, i) => {
-      if (idx === i) {
-        tabDesc[idx].style.display = 'block'
-        gsap.from(tabBg[i], 0.8, {
-          opacity: 0
-        })
-      } else {
-        descitem.style.display = 'none'
-      }
-    })
-
-    if (idx === 3) {
-      gsap.from(engineDesc, 1, {
-        opacity: 0,
-        y: 200
-      })
-      engineCount();
+  setInterval(() => {
+    if (kgf === 43) {
+      clearInterval();
+      return false;
     }
-  })
-
-})
-
-$(function () {
-  $(".tab_tit").click(function () {
-    $('.desc p').slideUp();
-    if ($(this).siblings('.desc').children('p').is(':hidden')) {
-      $(this).siblings('.desc').children('p').slideDown();
-    }
-  });
-});
+    kgf += 1;
+    kgfCount.innerHTML = kgf + '.0';
+  }, 75)
+}
 ```
 </details>
 
 <br/>
 
 ------------
+
+
 
 
 
