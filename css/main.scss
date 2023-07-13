@@ -662,17 +662,17 @@ main {
           color: #fff;
           border-bottom: 1px solid #fff;
 
-          &:first-child {
-            p {
-              display: block;
+          .desc {
+            &:first-child {
+              p {
+                display: block;
+              }
             }
           }
-
-
         }
 
         .tab_tit {
-          padding: 30px 0;
+          line-height: 124px;
           cursor: pointer;
           text-align: center;
           font-size: 20px;
@@ -700,13 +700,18 @@ main {
         width: 100%;
         overflow: hidden;
 
+        >div {
+          >div {
+            position: relative;
+            width: 100%;
+            height: 650px;
+          }
+        }
+
         .suspension {
           transition: .3s;
 
           .sus {
-            position: relative;
-            width: 100%;
-
             &::before {
               content: '';
               display: block;
@@ -722,27 +727,6 @@ main {
               width: 100%;
               height: 100%;
             }
-
-            /* .sus_desc {
-              position: absolute;
-              bottom: 150px;
-              left: 50px;
-              z-index: 2;
-              width: 40%;
-
-              p {
-                color: #fff;
-                font-size: 18px;
-                line-height: 1.5;
-
-                &.tit {
-                  font-weight: 700;
-                  text-align: center;
-                  margin-bottom: 15px;
-                  font-size: 26px;
-                }
-              }
-            } */
           }
         }
 
@@ -750,7 +734,6 @@ main {
           display: none;
 
           .tech {
-            position: relative;
 
             &::before {
               content: '';
@@ -776,7 +759,6 @@ main {
           display: none;
 
           .build {
-            position: relative;
 
             &::before {
               content: '';
@@ -791,29 +773,8 @@ main {
 
             .build_img {
               width: 100%;
+              height: 100%;
             }
-
-            /*  .build_desc {
-              position: absolute;
-              bottom: 90px;
-              left: 0;
-              width: 48%;
-              z-index: 1;
-              padding: 0 60px;
-
-              p {
-                font-size: 18px;
-                line-height: 1.5;
-                color: #fff;
-
-                &.tit {
-                  font-weight: 700;
-                  text-align: center;
-                  margin-bottom: 15px;
-                  font-size: 26px;
-                }
-              }
-            } */
           }
         }
 
@@ -821,7 +782,6 @@ main {
           display: none;
 
           .engine {
-            position: relative;
 
             &::before {
               content: '';
@@ -835,7 +795,7 @@ main {
             }
 
             .engine_img {
-              width: 140%;
+              width: 125%;
               height: 100%;
             }
 

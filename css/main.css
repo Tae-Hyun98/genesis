@@ -549,11 +549,11 @@ main .performance_section .performance .tab > div {
   color: #fff;
   border-bottom: 1px solid #fff;
 }
-main .performance_section .performance .tab > div:first-child p {
+main .performance_section .performance .tab > div .desc:first-child p {
   display: block;
 }
 main .performance_section .performance .tab .tab_tit {
-  padding: 30px 0;
+  line-height: 124px;
   cursor: pointer;
   text-align: center;
   font-size: 20px;
@@ -572,32 +572,13 @@ main .performance_section .performance .tab_bg {
   width: 100%;
   overflow: hidden;
 }
-main .performance_section .performance .tab_bg .suspension {
-  transition: 0.3s;
-}
-main .performance_section .performance .tab_bg .suspension .sus {
+main .performance_section .performance .tab_bg > div > div {
   position: relative;
   width: 100%;
-  /* .sus_desc {
-    position: absolute;
-    bottom: 150px;
-    left: 50px;
-    z-index: 2;
-    width: 40%;
-
-    p {
-      color: #fff;
-      font-size: 18px;
-      line-height: 1.5;
-
-      &.tit {
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 15px;
-        font-size: 26px;
-      }
-    }
-  } */
+  height: 650px;
+}
+main .performance_section .performance .tab_bg .suspension {
+  transition: 0.3s;
 }
 main .performance_section .performance .tab_bg .suspension .sus::before {
   content: "";
@@ -615,9 +596,6 @@ main .performance_section .performance .tab_bg .suspension .sus .sus_img {
 }
 main .performance_section .performance .tab_bg .technology {
   display: none;
-}
-main .performance_section .performance .tab_bg .technology .tech {
-  position: relative;
 }
 main .performance_section .performance .tab_bg .technology .tech::before {
   content: "";
@@ -637,30 +615,6 @@ main .performance_section .performance .tab_bg .technology .tech img {
 main .performance_section .performance .tab_bg .buildto {
   display: none;
 }
-main .performance_section .performance .tab_bg .buildto .build {
-  position: relative;
-  /*  .build_desc {
-    position: absolute;
-    bottom: 90px;
-    left: 0;
-    width: 48%;
-    z-index: 1;
-    padding: 0 60px;
-
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-      color: #fff;
-
-      &.tit {
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 15px;
-        font-size: 26px;
-      }
-    }
-  } */
-}
 main .performance_section .performance .tab_bg .buildto .build::before {
   content: "";
   display: block;
@@ -673,12 +627,10 @@ main .performance_section .performance .tab_bg .buildto .build::before {
 }
 main .performance_section .performance .tab_bg .buildto .build .build_img {
   width: 100%;
+  height: 100%;
 }
 main .performance_section .performance .tab_bg .gvengine {
   display: none;
-}
-main .performance_section .performance .tab_bg .gvengine .engine {
-  position: relative;
 }
 main .performance_section .performance .tab_bg .gvengine .engine::before {
   content: "";
@@ -691,7 +643,7 @@ main .performance_section .performance .tab_bg .gvengine .engine::before {
   background: linear-gradient(to left, transparent, #111);
 }
 main .performance_section .performance .tab_bg .gvengine .engine .engine_img {
-  width: 140%;
+  width: 125%;
   height: 100%;
 }
 main .performance_section .performance .tab_bg .gvengine .engine .engine_desc {
