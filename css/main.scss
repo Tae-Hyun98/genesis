@@ -20,6 +20,45 @@ img {
   background-color: #111;
 }
 
+.popup_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba($color: #000, $alpha: 0.8);
+
+  .popup {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    line-height: 50px;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    padding: 100px 20px;
+    border: 1px solid #ccc;
+
+    button {
+      width: 100%;
+      height: 50px;
+      margin-top: 30px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      font-weight: 700;
+      font-size: 18px;
+      transition: .3s;
+
+      &:hover {
+        background-color: #1e1e1e;
+        color: #fff;
+      }
+    }
+  }
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -39,14 +78,16 @@ img {
 
       li {
         &:hover {
+
           a::before,
           a::after {
             width: 40%;
           }
 
         }
-        
+
         &.on {
+
           a::before,
           a::after {
             width: 40%;

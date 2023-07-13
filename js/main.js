@@ -177,6 +177,7 @@ const design = document.querySelector('.design_section').offsetTop - 200;
 const color = document.querySelector('.color_section').offsetTop - 200;
 const performanceSection = document.querySelector('.performance_section').offsetTop - 200;
 const gallerySection = document.querySelector('.gallery_section').offsetTop - 200;
+
 window.addEventListener('scroll', () => {
   for (let nav of navigation) {
     nav.classList.remove('on');
@@ -379,3 +380,11 @@ for (let i of slides) {
     gallerySwiper.autoplay.start();
   });
 }
+
+//팝업 닫기
+const popup = document.querySelector('.popup_bg');
+const closeBtn= document.getElementById('close');
+
+closeBtn.addEventListener('click',()=>{
+  popup.style.display='none';
+})
