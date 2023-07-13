@@ -87,19 +87,6 @@ window.addEventListener('scroll', () => {
   }
 });
 ```
-
-#### getItem으로 전달된 값을 받으면서 JSON형태의 데이터를 객체형태로 변환하여 저장합니다. 전달된 값이 없거나 length가 0이면 검색결과가 없다고 표시하며, 있다면 상품들을 출력하는 함수인 paginationFunc()함수로 상품들을 출력합니다.  
-```javascript
-const localData = JSON.parse(localStorage.getItem('result'));
-let words = localStorage.getItem('word')
-
-if (localData === '' || localData.length === 0) {
-  productList.innerHTML = `<h1>검색결과 해당하는 상품이 없습니다.</h1>`
-} else {
-  paginationFunc(localData)
-}
-```
-
 </details>
 
 <br/>
