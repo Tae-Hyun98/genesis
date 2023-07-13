@@ -149,5 +149,61 @@ $(function () {
 
 ------------
 
+### 5-3. 숫자증가 애니메이션
+<img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/c7e39066-4f6c-4eb2-833b-a377b89e1e91" width=90%/>
+
+#### 👇👇👇👇👇👇
+<details>
+ <summary>🔎 코드보기</summary>
+
+ #### 각 탭들에게 클릭이벤트를 주어 선택된 탭에게 클래스를 주어 선택된 탭과 같은 인덱스를 가진 배경이 나타나도록 조건을 걸어주었으며, 탭에대한 정보는 jQuery문법을 사용하여 정보가 숨겨져 있다면 slideDown으로 보이도록하였고, 아니라면 slideUp으로 숨겨지도록 구현하였습니다.
+```javascript
+const tabOn = document.querySelectorAll('.performance .tab .tab_tit');
+const tabDesc = document.querySelectorAll('.performance .tab_bg>div');
+const tabBg = document.querySelectorAll('.tab_bg>div>div');
+tabOn.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    for (let el of tabOn) {
+      el.classList.remove('on');
+    }
+    tabOn[idx].classList.add('on');
+
+    tabDesc.forEach((descitem, i) => {
+      if (idx === i) {
+        tabDesc[idx].style.display = 'block'
+        gsap.from(tabBg[i], 0.8, {
+          opacity: 0
+        })
+      } else {
+        descitem.style.display = 'none'
+      }
+    })
+
+    if (idx === 3) {
+      gsap.from(engineDesc, 1, {
+        opacity: 0,
+        y: 200
+      })
+      engineCount();
+    }
+  })
+
+})
+
+$(function () {
+  $(".tab_tit").click(function () {
+    $('.desc p').slideUp();
+    if ($(this).siblings('.desc').children('p').is(':hidden')) {
+      $(this).siblings('.desc').children('p').slideDown();
+    }
+  });
+});
+```
+</details>
+
+<br/>
+
+------------
+
 
 
