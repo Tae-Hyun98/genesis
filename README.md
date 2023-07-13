@@ -150,7 +150,7 @@ $(function () {
 ------------
 
 ### 5-3. 숫자증가 애니메이션
-<img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/c7e39066-4f6c-4eb2-833b-a377b89e1e91" width=90%/>
+<img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/27e3f618-6a44-4ecc-88d7-fb1fb5c78bd8" width=90%/>
 
 #### 👇👇👇👇👇👇
 <details>
