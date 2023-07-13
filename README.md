@@ -94,7 +94,7 @@ window.addEventListener('scroll', () => {
 ------------
 
 ### 5-2. 아코디언 탭메뉴
-<img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/9c7143d6-634f-4c0d-9533-51939093f59e" width=90%/>
+<img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/c7e39066-4f6c-4eb2-833b-a377b89e1e91" width=90%/>
 
 #### 👇👇👇👇👇👇
 <details>
