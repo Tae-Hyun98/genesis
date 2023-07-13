@@ -23,7 +23,7 @@
 
 - HTML5, SCSS로 마크업 및 스타일을 입혔으며, swiper.js라이브러리로 슬라이드효과를 주었고, gsap.js라이브러리를 사용하여 스크롤애니메이션효과를 주었습니다.
 
-- 주요기능으로는 **ㅇㅇㅇ** 등이 있습니다.
+- 주요기능으로는 **해당섹션도달시 네비게이션 언더바, performance 탭아코디언메뉴, 숫자카운트 애니메이션** 등이 있습니다.
 
 - 제작된 프로젝트는 Github를 통해 배포를 하였습니다.
   
@@ -35,7 +35,7 @@
 
 ## 3. 사용한 Skills  
   <a href="#!"><img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/></a>
-  <a href="#!"><img src="https://img.shields.io/badge/css3-1572B6?style=flat&logo=css3&logoColor=white"/></a>
+  <a href="#!"><img src="https://img.shields.io/badge/scss-CC6699?style=flat&logo=sass&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/></a>
 
