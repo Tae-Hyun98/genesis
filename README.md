@@ -11,7 +11,7 @@
   ### 4. [페이지 구성](#4-페이지-구성-1)
   ### 5. [주요기능(코드)](#5-주요기능)   
    - #### [네비게이션 언더바](#5-1-검색기능)  
-   - #### [아코디언탭메뉴](#5-2-상품-리뷰문의기능)  
+   - #### [아코디언 탭메뉴](#5-2-상품-리뷰문의기능)  
   ### 6. [느낀점](#6-느낀점-1)
 
 <br/> 
@@ -25,7 +25,7 @@
 
 - SCSS는 vscode extenstion인 Live Sass Compiler를 이용하여 SCSS로 제작하였습니다.
 
-- 주요기능으로는 **해당섹션도달시 네비게이션 언더바, performance 아코디언탭메뉴, 숫자카운트 애니메이션** 등이 있습니다.
+- 주요기능으로는 **해당섹션도달시 네비게이션 언더바, performance 아코디언 탭메뉴, 숫자카운트 애니메이션** 등이 있습니다.
 
 - 제작된 프로젝트는 Github를 통해 배포를 하였습니다.
   
@@ -56,6 +56,44 @@
 
 ## 5. 주요기능  
 ### 5-1. 섹션도달시 네비게이션 언더바  
+<img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/9c7143d6-634f-4c0d-9533-51939093f59e" width=90%/>
+
+#### 👇👇👇👇👇👇
+<details>
+ <summary>🔎 코드보기</summary>
+
+ #### 해당 섹션의 offsetTop값을 변수에 담은뒤 if문으로 논리연산자를 이용한 조건을 걸어 window.scrollY가 조건에 맞는위치에 있으면 해당 네비게이션에 클래스를 붙이고, 아니면 제거를 하도록 구현하였습니다.
+```javascript
+const visual = document.querySelector('.visual').offsetTop;
+const design = document.querySelector('.design_section').offsetTop - 200;
+const color = document.querySelector('.color_section').offsetTop - 200;
+const performanceSection = document.querySelector('.performance_section').offsetTop - 200;
+const gallerySection = document.querySelector('.gallery_section').offsetTop - 200;
+
+window.addEventListener('scroll', () => {
+  for (let nav of navigation) {
+    nav.classList.remove('on');
+  }
+  if (window.scrollY >= visual && window.scrollY <= design) {
+    navigation[0].classList.add('on');
+  } else if (window.scrollY >= design && window.scrollY <= color) {
+    navigation[1].classList.add('on');
+  } else if (window.scrollY >= color && window.scrollY <= performanceSection) {
+    navigation[2].classList.add('on')
+  } else if (window.scrollY >= performanceSection && window.scrollY <= gallerySection) {
+    navigation[3].classList.add('on')
+  } else if (window.scrollY >= gallerySection) {
+    navigation[4].classList.add('on')
+  }
+});
+```
+</details>
+
+<br/>
+
+------------
+
+### 5-2. 아코디언 탭메뉴
 <img src="https://github.com/Tae-Hyun98/genesis/assets/119056869/9c7143d6-634f-4c0d-9533-51939093f59e" width=90%/>
 
 #### 👇👇👇👇👇👇
